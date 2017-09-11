@@ -10,9 +10,9 @@
 		E59C31AC1F661FE800B33593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AB1F661FE800B33593 /* main.m */; };
 		E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AE1F661FE800B33593 /* AppDelegate.m */; };
 		E59C31B21F661FE800B33593 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31B11F661FE800B33593 /* ViewController.m */; };
-		E59C31B51F661FE800B33593 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B31F661FE800B33593 /* Main.storyboard */; };
 		E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B61F661FE800B33593 /* Assets.xcassets */; };
 		E59C31BA1F661FE800B33593 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B81F661FE800B33593 /* LaunchScreen.storyboard */; };
+		E59C31C31F66304D00B33593 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31C21F66304D00B33593 /* LandingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +22,11 @@
 		E59C31AE1F661FE800B33593 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E59C31B01F661FE800B33593 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E59C31B11F661FE800B33593 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E59C31B41F661FE800B33593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E59C31B61F661FE800B33593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E59C31B91F661FE800B33593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E59C31BB1F661FE800B33593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E59C31C11F66304D00B33593 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
+		E59C31C21F66304D00B33593 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +63,8 @@
 				E59C31AE1F661FE800B33593 /* AppDelegate.m */,
 				E59C31B01F661FE800B33593 /* ViewController.h */,
 				E59C31B11F661FE800B33593 /* ViewController.m */,
-				E59C31B31F661FE800B33593 /* Main.storyboard */,
+				E59C31C41F66305700B33593 /* Landing */,
 				E59C31B61F661FE800B33593 /* Assets.xcassets */,
-				E59C31B81F661FE800B33593 /* LaunchScreen.storyboard */,
 				E59C31BB1F661FE800B33593 /* Info.plist */,
 				E59C31AA1F661FE800B33593 /* Supporting Files */,
 			);
@@ -77,6 +77,16 @@
 				E59C31AB1F661FE800B33593 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E59C31C41F66305700B33593 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				E59C31C11F66304D00B33593 /* LandingViewController.h */,
+				E59C31C21F66304D00B33593 /* LandingViewController.m */,
+				E59C31B81F661FE800B33593 /* LaunchScreen.storyboard */,
+			);
+			name = Landing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +150,6 @@
 			files = (
 				E59C31BA1F661FE800B33593 /* LaunchScreen.storyboard in Resources */,
 				E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */,
-				E59C31B51F661FE800B33593 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +162,7 @@
 			files = (
 				E59C31B21F661FE800B33593 /* ViewController.m in Sources */,
 				E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */,
+				E59C31C31F66304D00B33593 /* LandingViewController.m in Sources */,
 				E59C31AC1F661FE800B33593 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,14 +170,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E59C31B31F661FE800B33593 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E59C31B41F661FE800B33593 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E59C31B81F661FE800B33593 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -312,6 +314,7 @@
 				E59C31C01F661FE800B33593 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
