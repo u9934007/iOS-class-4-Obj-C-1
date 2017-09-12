@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductCommentViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

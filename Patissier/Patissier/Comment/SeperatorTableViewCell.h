@@ -1,0 +1,14 @@
+//
+//  SeperatorTableViewCell.h
+//  Patissier
+//
+//  Created by 楊采庭 on 2017/9/12.
+//  Copyright © 2017年 Brady Huang. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface SeperatorTableViewCell : UITableViewCell
+    @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+
+@end
