@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3B9BD7C8582FA3F2883C423 /* Pods_Patissier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74226761BB7D1EACD3355303 /* Pods_Patissier.framework */; };
 		B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9701F6629F6007D8461 /* ProductCommentViewController.m */; };
 		B259E9831F666AD4007D8461 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9821F666AD4007D8461 /* CommentModel.m */; };
 		B259E9861F66712F007D8461 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9851F66712F007D8461 /* ProductModel.m */; };
@@ -24,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		373682DD10418AD84A0E470E /* Pods-Patissier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patissier.release.xcconfig"; path = "Pods/Target Support Files/Pods-Patissier/Pods-Patissier.release.xcconfig"; sourceTree = "<group>"; };
+		74226761BB7D1EACD3355303 /* Pods_Patissier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patissier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98894CEEDDB030D3617EB7CF /* Pods-Patissier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patissier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Patissier/Pods-Patissier.debug.xcconfig"; sourceTree = "<group>"; };
 		B259E9701F6629F6007D8461 /* ProductCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductCommentViewController.m; path = Comment/ProductCommentViewController.m; sourceTree = "<group>"; };
 		B259E9741F663BFD007D8461 /* ProductCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductCommentViewController.h; path = Comment/ProductCommentViewController.h; sourceTree = "<group>"; };
 		B259E9811F6669F5007D8461 /* CommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommentModel.h; path = Comment/CommentModel.h; sourceTree = "<group>"; };
@@ -56,12 +60,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B9BD7C8582FA3F2883C423 /* Pods_Patissier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F6058FFA881CEB6B783310F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74226761BB7D1EACD3355303 /* Pods_Patissier.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B259E96E1F6629B4007D8461 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,11 +119,22 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		B9A443D9A2EED14514AA6B04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98894CEEDDB030D3617EB7CF /* Pods-Patissier.debug.xcconfig */,
+				373682DD10418AD84A0E470E /* Pods-Patissier.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E59C319E1F661FE700B33593 = {
 			isa = PBXGroup;
 			children = (
 				E59C31A91F661FE800B33593 /* Patissier */,
 				E59C31A81F661FE800B33593 /* Products */,
+				B9A443D9A2EED14514AA6B04 /* Pods */,
+				1F6058FFA881CEB6B783310F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E59C31BE1F661FE800B33593 /* Build configuration list for PBXNativeTarget "Patissier" */;
 			buildPhases = (
+				88C957275C577ABA395F531C /* [CP] Check Pods Manifest.lock */,
 				E59C31A31F661FE700B33593 /* Sources */,
 				E59C31A41F661FE700B33593 /* Frameworks */,
 				E59C31A51F661FE700B33593 /* Resources */,
+				24F7DAB137C082CB9BE0139A /* [CP] Embed Pods Frameworks */,
+				1F1E8C3946C81531A74F8EC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +245,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F1E8C3946C81531A74F8EC8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Patissier/Pods-Patissier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24F7DAB137C082CB9BE0139A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Patissier/Pods-Patissier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88C957275C577ABA395F531C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E59C31A31F661FE700B33593 /* Sources */ = {
@@ -342,6 +417,7 @@
 		};
 		E59C31BF1F661FE800B33593 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98894CEEDDB030D3617EB7CF /* Pods-Patissier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -358,6 +434,7 @@
 		};
 		E59C31C01F661FE800B33593 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 373682DD10418AD84A0E470E /* Pods-Patissier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
