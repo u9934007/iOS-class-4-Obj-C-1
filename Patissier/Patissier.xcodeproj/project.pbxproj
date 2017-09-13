@@ -19,6 +19,7 @@
 		B259E9961F67CA4F007D8461 /* ProductInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259E9941F67CA4F007D8461 /* ProductInformationTableViewCell.xib */; };
 		B259E99A1F67DBF3007D8461 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9981F67DBF3007D8461 /* CommentTableViewCell.m */; };
 		B259E99B1F67DBF3007D8461 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259E9991F67DBF3007D8461 /* CommentTableViewCell.xib */; };
+		B259E99E1F67E382007D8461 /* CommentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E99D1F67E382007D8461 /* CommentManager.m */; };
 		E59C31AC1F661FE800B33593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AB1F661FE800B33593 /* main.m */; };
 		E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AE1F661FE800B33593 /* AppDelegate.m */; };
 		E59C31B21F661FE800B33593 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31B11F661FE800B33593 /* ViewController.m */; };
@@ -51,6 +52,8 @@
 		B259E9971F67DBF3007D8461 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentTableViewCell.h; path = Comment/CommentTableViewCell.h; sourceTree = "<group>"; };
 		B259E9981F67DBF3007D8461 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentTableViewCell.m; path = Comment/CommentTableViewCell.m; sourceTree = "<group>"; };
 		B259E9991F67DBF3007D8461 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentTableViewCell.xib; path = Comment/CommentTableViewCell.xib; sourceTree = "<group>"; };
+		B259E99C1F67E1D1007D8461 /* CommentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommentManager.h; path = API/CommentManager.h; sourceTree = "<group>"; };
+		B259E99D1F67E382007D8461 /* CommentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentManager.m; path = API/CommentManager.m; sourceTree = "<group>"; };
 		E59C31A71F661FE800B33593 /* Patissier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patissier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59C31AB1F661FE800B33593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E59C31AD1F661FE800B33593 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 		B259E96E1F6629B4007D8461 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				B259E99C1F67E1D1007D8461 /* CommentManager.h */,
+				B259E99D1F67E382007D8461 /* CommentManager.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				E59C31B21F661FE800B33593 /* ViewController.m in Sources */,
 				B259E9951F67CA4F007D8461 /* ProductInformationTableViewCell.m in Sources */,
 				B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */,
+				B259E99E1F67E382007D8461 /* CommentManager.m in Sources */,
 				B259E9831F666AD4007D8461 /* CommentModel.m in Sources */,
 				E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */,
 				E59C31C31F66304D00B33593 /* LandingViewController.m in Sources */,

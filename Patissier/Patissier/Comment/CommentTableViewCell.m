@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    _userImageView.layer.cornerRadius = _userImageView.frame.size.height/2;
     // Initialization code
 }
 
