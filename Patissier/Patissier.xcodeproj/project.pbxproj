@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124F50711F68FABD004D00CE /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F50701F68FABD004D00CE /* ProductCollectionViewController.m */; };
+		124F50741F68FAE5004D00CE /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F50731F68FAE5004D00CE /* ProductCollectionViewCell.m */; };
 		A3B9BD7C8582FA3F2883C423 /* Pods_Patissier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74226761BB7D1EACD3355303 /* Pods_Patissier.framework */; };
 		B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9701F6629F6007D8461 /* ProductCommentViewController.m */; };
 		B259E9831F666AD4007D8461 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9821F666AD4007D8461 /* CommentModel.m */; };
@@ -26,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		124F506F1F68FABD004D00CE /* ProductCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewController.h; sourceTree = "<group>"; };
+		124F50701F68FABD004D00CE /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
+		124F50721F68FAE5004D00CE /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
+		124F50731F68FAE5004D00CE /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 		373682DD10418AD84A0E470E /* Pods-Patissier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patissier.release.xcconfig"; path = "Pods/Target Support Files/Pods-Patissier/Pods-Patissier.release.xcconfig"; sourceTree = "<group>"; };
 		74226761BB7D1EACD3355303 /* Pods_Patissier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patissier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98894CEEDDB030D3617EB7CF /* Pods-Patissier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patissier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Patissier/Pods-Patissier.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 			children = (
 				B259E9871F667139007D8461 /* ProductModel.h */,
 				B259E9851F66712F007D8461 /* ProductModel.m */,
+				124F506F1F68FABD004D00CE /* ProductCollectionViewController.h */,
+				124F50701F68FABD004D00CE /* ProductCollectionViewController.m */,
+				124F50721F68FAE5004D00CE /* ProductCollectionViewCell.h */,
+				124F50731F68FAE5004D00CE /* ProductCollectionViewCell.m */,
 			);
 			name = Product;
 			sourceTree = "<group>";
@@ -249,7 +259,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E59C31BA1F661FE800B33593 /* LaunchScreen.storyboard in Resources */,
 				B259E98E1F67C531007D8461 /* SeperatorTableViewCell.xib in Resources */,
 				B259E9961F67CA4F007D8461 /* ProductInformationTableViewCell.xib in Resources */,
 				E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */,
@@ -316,6 +325,7 @@
 			files = (
 				B259E98D1F67C531007D8461 /* SeperatorTableViewCell.m in Sources */,
 				B259E99A1F67DBF3007D8461 /* CommentTableViewCell.m in Sources */,
+				124F50711F68FABD004D00CE /* ProductCollectionViewController.m in Sources */,
 				E59C31B21F661FE800B33593 /* ViewController.m in Sources */,
 				B259E9951F67CA4F007D8461 /* ProductInformationTableViewCell.m in Sources */,
 				B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */,
@@ -323,22 +333,12 @@
 				E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */,
 				E59C31C31F66304D00B33593 /* LandingViewController.m in Sources */,
 				E59C31AC1F661FE800B33593 /* main.m in Sources */,
+				124F50741F68FAE5004D00CE /* ProductCollectionViewCell.m in Sources */,
 				B259E9861F66712F007D8461 /* ProductModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E59C31B81F661FE800B33593 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E59C31B91F661FE800B33593 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E59C31BC1F661FE800B33593 /* Debug */ = {
