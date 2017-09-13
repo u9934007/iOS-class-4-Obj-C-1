@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wjq-cf-jQy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing View Controller-->
+        <scene sceneID="5kg-IU-LQH">
+            <objects>
+                <viewController storyboardIdentifier="LandingViewController" id="Wjq-cf-jQy" customClass="LandingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="djr-Ob-rpM"/>
+                        <viewControllerLayoutGuide type="bottom" id="TAI-Wv-UmJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jw9-h7-z7S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hQ4-KI-uJH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgZ-kI-jOK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOz-iO-Vke">
+                                <rect key="frame" x="0.0" y="567" width="10" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="l0M-Pt-Csy"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yT-Jj-tbA">
+                                <rect key="frame" x="365" y="-4" width="10" height="115"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="T7u-E0-1dg"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fn4-RS-vvD">
+                                <rect key="frame" x="112" y="537" width="150" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Sign In with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-Uo-WSY">
+                                <rect key="frame" x="128.5" y="111" width="117.5" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SgZ-kI-jOK" firstAttribute="top" secondItem="jw9-h7-z7S" secondAttribute="top" id="1sq-2x-XnW"/>
+                            <constraint firstItem="wOz-iO-Vke" firstAttribute="leading" secondItem="jw9-h7-z7S" secondAttribute="leadingMargin" constant="-16" id="4bI-so-bQ3"/>
+                            <constraint firstItem="wOz-iO-Vke" firstAttribute="height" secondItem="SgZ-kI-jOK" secondAttribute="height" multiplier="100:667" id="75L-jq-TgZ"/>
+                            <constraint firstItem="TAI-Wv-UmJ" firstAttribute="top" secondItem="SgZ-kI-jOK" secondAttribute="bottom" id="AXF-DJ-ZFE"/>
+                            <constraint firstItem="SgZ-kI-jOK" firstAttribute="leading" secondItem="jw9-h7-z7S" secondAttribute="leading" id="B0d-v9-uQq"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fn4-RS-vvD" secondAttribute="trailing" constant="20" symbolic="YES" id="B2l-Px-wxQ"/>
+                            <constraint firstItem="hQ4-KI-uJH" firstAttribute="leading" secondItem="jw9-h7-z7S" secondAttribute="leading" id="Bfe-nQ-3Zf"/>
+                            <constraint firstItem="z1g-Uo-WSY" firstAttribute="centerX" secondItem="jw9-h7-z7S" secondAttribute="centerX" id="Dmo-7O-6Ra"/>
+                            <constraint firstItem="1yT-Jj-tbA" firstAttribute="top" secondItem="djr-Ob-rpM" secondAttribute="bottom" constant="-24" id="Erl-aQ-dSl"/>
+                            <constraint firstItem="wOz-iO-Vke" firstAttribute="top" secondItem="fn4-RS-vvD" secondAttribute="bottom" id="NtZ-pm-Mf8"/>
+                            <constraint firstItem="TAI-Wv-UmJ" firstAttribute="top" secondItem="hQ4-KI-uJH" secondAttribute="bottom" id="POP-Di-xgi"/>
+                            <constraint firstItem="hQ4-KI-uJH" firstAttribute="top" secondItem="jw9-h7-z7S" secondAttribute="top" id="VtO-Wi-gRK"/>
+                            <constraint firstItem="TAI-Wv-UmJ" firstAttribute="top" secondItem="wOz-iO-Vke" secondAttribute="bottom" id="WCB-0e-4cB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1yT-Jj-tbA" secondAttribute="trailing" constant="-16" id="cIJ-Xk-w8U"/>
+                            <constraint firstItem="1yT-Jj-tbA" firstAttribute="height" secondItem="SgZ-kI-jOK" secondAttribute="height" multiplier="115:667" id="dr4-tr-YsF"/>
+                            <constraint firstItem="fn4-RS-vvD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jw9-h7-z7S" secondAttribute="leading" constant="96" id="fwb-bf-mjg"/>
+                            <constraint firstAttribute="trailing" secondItem="hQ4-KI-uJH" secondAttribute="trailing" id="lfE-qe-bsB"/>
+                            <constraint firstAttribute="trailing" secondItem="SgZ-kI-jOK" secondAttribute="trailing" id="moq-Rb-84W"/>
+                            <constraint firstItem="z1g-Uo-WSY" firstAttribute="top" secondItem="1yT-Jj-tbA" secondAttribute="bottom" id="n7Z-N3-wga"/>
+                            <constraint firstItem="fn4-RS-vvD" firstAttribute="centerX" secondItem="jw9-h7-z7S" secondAttribute="centerX" id="scf-Pr-XnX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundGradientView" destination="SgZ-kI-jOK" id="s1W-QB-Gou"/>
+                        <outlet property="backgroundImageView" destination="hQ4-KI-uJH" id="ke2-7G-UgB"/>
+                        <outlet property="logoLabel" destination="z1g-Uo-WSY" id="HVc-9X-jxF"/>
+                        <outlet property="signInWithFacebookButton" destination="fn4-RS-vvD" id="9xT-td-BWh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyw-Tf-Cn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346.39999999999998" y="-696.7016491754124"/>
+        </scene>
+    </scenes>
+</document>
