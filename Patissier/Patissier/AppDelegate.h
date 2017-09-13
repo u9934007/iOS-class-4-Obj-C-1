@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-<<<<<<< HEAD
 #import "ProductCommentViewController.h"
-=======
 #import "LandingViewController.h"
->>>>>>> Landing
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
