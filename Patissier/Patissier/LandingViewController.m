@@ -123,16 +123,6 @@
 
 - (IBAction)signInWithFacebook:(id)sender {
     
-    int (^errorHandler)(void) = ^{
-
-        NSLog(@"eetet");
-        
-        return 1;
-    
-    };
-    
-    NSLog(@"%d", errorHandler());
-    
     [self errorHandler:^(NSError *error) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Something went wrong", "") message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
