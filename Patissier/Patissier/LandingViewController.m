@@ -119,4 +119,17 @@
 }
 
 
+- (IBAction)signInWithFacebook:(id)sender {
+    
+    void (^multiplyTwoValues)(NSError*) =
+    ^(NSError* error) {
+
+        NSLog(@"eetet");
+    
+    };
+    
+    multiplyTwoValues;
+}
+
+
 @end
