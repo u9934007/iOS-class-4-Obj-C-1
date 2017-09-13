@@ -34,6 +34,8 @@ typedef enum{
 @property NSMutableArray<CommentModel*> *commentArray;
 
 @property bool isLoading;
+    
+@property CommentManager* commentManager;
 
     
 @end
@@ -47,22 +49,51 @@ typedef enum{
         self.product = product;
     
         return self;
+
 }
      
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // TempInformation
+    
+    [self setDefaultProperty];
         
     self.title = @"Product";
     
-    self.isLoading = true;
-    
     [self setUpTableView];
+    
+    [self.commentManager getCommentsForProductID: _product.iD withCompletionHandler:^(NSMutableArray<CommentModel *> * _Nullable commentArray, NSError * _Nullable error) {
+        if (!error) {
+            
+            [self.commentArray addObjectsFromArray: commentArray];
+
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            self.isLoading = false;
+            [self.tableView reloadData];
+        
+        });
+    
+    }];
+    
+}
+
+-(void)setDefaultProperty {
+    
+    self.commentArray = [[NSMutableArray alloc] init];
+    
+    self.commentManager = [CommentManager sharedInstance];
+    
+    self.isLoading = true;
     
 }
     
 - (void)setUpTableView {
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     UINib *productInformationNib = [UINib nibWithNibName: PRODUCTINFORMATION_TABLEVIEW_CELL bundle:nil];
     
@@ -89,8 +120,8 @@ typedef enum{
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (!self.isLoading) {
-    
-        return _commentArray.count + 2;
+
+        return self.commentArray.count + 2;
     
     } else {
         
@@ -110,7 +141,9 @@ typedef enum{
         return 19.0;
     
     } else {
-    
+        
+        self.tableView.estimatedRowHeight = 105.0;
+        
         return UITableViewAutomaticDimension;
     
     }
@@ -139,11 +172,15 @@ typedef enum{
             }
         });
         
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         return cell;
         
     } else if (indexPath.row == 1){
         
         SeperatorTableViewCell *cell = (SeperatorTableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"SeperatorTableViewCell" forIndexPath:indexPath];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 
         return cell;
         
@@ -151,9 +188,25 @@ typedef enum{
         
         CommentTableViewCell *cell = (CommentTableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCell" forIndexPath:indexPath];
         
-        cell.userNameLabel.text = _commentArray[indexPath.row].userName;
+        cell.userNameLabel.text = _commentArray[indexPath.row -2].userName;
         
-        cell.commentContentLabel.text = _commentArray[indexPath.row].text;
+        cell.commentContentLabel.text = _commentArray[indexPath.row -2].text;
+        
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: _commentArray[indexPath.row -2].userImageURLString]];
+            if ( data != nil )
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // WARNING: is the cell still using the same data by this point??
+                    cell.userImageView.image = [UIImage imageWithData: data];
+                });
+                
+            }
+        });
+
+        
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
 
