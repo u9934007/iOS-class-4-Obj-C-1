@@ -19,14 +19,14 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ProductModel *product = [[ProductModel alloc] initWithTitle:@"巧克力杯子蛋糕" iD:@"5947974173a7f08ded3e8269" price: 120];
-    
-    ProductCommentViewController *vc = [[ProductCommentViewController alloc] initWithProduct: product];
-    self.window.rootViewController = vc;
+//    ProductModel *product = [[ProductModel alloc] initWithTitle:@"巧克力杯子蛋糕" iD:@"5947974173a7f08ded3e8269" price: 120];
+//    
+//    ProductCommentViewController *vc = [[ProductCommentViewController alloc] initWithProduct: product];
+//    self.window.rootViewController = vc;
 
-//    LandingViewController *landingViewController = [[UIStoryboard storyboardWithName: @"Landing" bundle:nil] instantiateViewControllerWithIdentifier: @"LandingViewController"];
-//
-//    self.window.rootViewController = landingViewController;
+    LandingViewController *landingViewController = [[UIStoryboard storyboardWithName: @"Landing" bundle:nil] instantiateViewControllerWithIdentifier: @"LandingViewController"];
+
+    self.window.rootViewController = landingViewController;
 
     [self.window makeKeyAndVisible];
 

@@ -12,6 +12,8 @@
 
 @property CAGradientLayer *backgroundGradientLayer;
 
+- (void) errorHandler:(void (^)(NSError* error))callbackBlock;
+
 @end
 
 @implementation LandingViewController
@@ -115,6 +117,33 @@
     button.layer.shadowOpacity = 1.0;
     
     button.layer.shadowRadius = 10.0;
+    
+}
+
+
+- (IBAction)signInWithFacebook:(id)sender {
+    
+    int (^errorHandler)(void) = ^{
+
+        NSLog(@"eetet");
+        
+        return 1;
+    
+    };
+    
+    NSLog(@"%d", errorHandler());
+    
+    [self errorHandler:^(NSError *error) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Something went wrong", "") message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", "") style:UIAlertActionStyleCancel handler:nil];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }];
     
 }
 
