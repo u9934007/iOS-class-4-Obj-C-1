@@ -21,7 +21,8 @@
 		E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AE1F661FE800B33593 /* AppDelegate.m */; };
 		E59C31B21F661FE800B33593 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31B11F661FE800B33593 /* ViewController.m */; };
 		E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B61F661FE800B33593 /* Assets.xcassets */; };
-		E59C31BA1F661FE800B33593 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B81F661FE800B33593 /* LaunchScreen.storyboard */; };
+		E59C31C31F66304D00B33593 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31C21F66304D00B33593 /* LandingViewController.m */; };
+		E59C31C61F6655CD00B33593 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59C31C51F6655CD00B33593 /* Landing.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +52,10 @@
 		E59C31B01F661FE800B33593 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E59C31B11F661FE800B33593 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E59C31B61F661FE800B33593 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E59C31B91F661FE800B33593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E59C31BB1F661FE800B33593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E59C31C11F66304D00B33593 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
+		E59C31C21F66304D00B33593 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
+		E59C31C51F6655CD00B33593 /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +160,8 @@
 				B259E96F1F6629BD007D8461 /* Comment */,
 				B259E9841F667118007D8461 /* Product */,
 				B259E9881F67BC69007D8461 /* Constants */,
+				E59C31C41F66305700B33593 /* Landing */,
 				E59C31B61F661FE800B33593 /* Assets.xcassets */,
-				E59C31B81F661FE800B33593 /* LaunchScreen.storyboard */,
 				E59C31BB1F661FE800B33593 /* Info.plist */,
 				E59C31AA1F661FE800B33593 /* Supporting Files */,
 			);
@@ -171,6 +174,16 @@
 				E59C31AB1F661FE800B33593 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E59C31C41F66305700B33593 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				E59C31C11F66304D00B33593 /* LandingViewController.h */,
+				E59C31C21F66304D00B33593 /* LandingViewController.m */,
+				E59C31C51F6655CD00B33593 /* Landing.storyboard */,
+			);
+			name = Landing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +254,8 @@
 				B259E9961F67CA4F007D8461 /* ProductInformationTableViewCell.xib in Resources */,
 				E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */,
 				B259E99B1F67DBF3007D8461 /* CommentTableViewCell.xib in Resources */,
+				E59C31C61F6655CD00B33593 /* Landing.storyboard in Resources */,
+				E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +321,7 @@
 				B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */,
 				B259E9831F666AD4007D8461 /* CommentModel.m in Sources */,
 				E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */,
+				E59C31C31F66304D00B33593 /* LandingViewController.m in Sources */,
 				E59C31AC1F661FE800B33593 /* main.m in Sources */,
 				B259E9861F66712F007D8461 /* ProductModel.m in Sources */,
 			);

@@ -16,6 +16,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+<<<<<<< HEAD
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -26,6 +27,19 @@
     self.window.rootViewController = vc;
     
     [self.window makeKeyAndVisible];
+=======
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    LandingViewController *landingViewController = [[UIStoryboard storyboardWithName: @"Landing" bundle:nil] instantiateViewControllerWithIdentifier: @"LandingViewController"];
+
+    self.window.rootViewController = landingViewController;
+
+    [self.window makeKeyAndVisible];
+    
+    
+
+>>>>>>> Landing
     return YES;
 }
 

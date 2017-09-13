@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+<<<<<<< HEAD
 #import "ProductCommentViewController.h"
+=======
+#import "LandingViewController.h"
+>>>>>>> Landing
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) LandingViewController *landingViewController;
+
+@property (strong, nonatomic) UICollectionViewController *test2;
 
 @end
 
