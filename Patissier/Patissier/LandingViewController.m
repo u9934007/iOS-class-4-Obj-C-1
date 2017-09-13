@@ -118,12 +118,5 @@
     
 }
 
-- (IBAction)signInWithFacebook:(id)sender {
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle: NSLocalizedString(@"Something went wrong", "") message:@"Message" preferredStyle:UIAlertControllerStyleAlert];
-    
-    
-    
-}
 
 @end

@@ -50,9 +50,6 @@
                                 <state key="normal" title="Sign In with Facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="signInWithFacebook:" destination="Wjq-cf-jQy" eventType="touchUpInside" id="iO3-Zu-Xgz"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-Uo-WSY">
                                 <rect key="frame" x="128.5" y="111" width="117.5" height="60"/>
