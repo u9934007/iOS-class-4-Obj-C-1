@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ProductModel.h"
+#import "CommentManager.h"
 
-@interface ProductCommentViewController : UITableViewController
+@interface ProductCommentViewController: UITableViewController
     
 @property ProductModel* product;
     
