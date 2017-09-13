@@ -20,7 +20,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.estimatedItemSize = CGSizeMake(154, 160);
+//    layout.estimatedItemSize = CGSizeMake(154, 160);
+    layout.itemSize = CGSizeMake(154, 160);
+
     
     layout.minimumLineSpacing = 22;
     

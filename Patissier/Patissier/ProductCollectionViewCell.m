@@ -26,16 +26,16 @@
     
     
     self.productBottomView = [[UIView alloc]initWithFrame:CGRectMake(6, 98, 142, 60.5) ];
-    self.productBottomView.backgroundColor = [UIColor greenColor];
+    self.productBottomView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.productBottomView];
     
     
     self.productNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, 10, 126, 16) ];
-    self.productNameLabel.backgroundColor = [UIColor orangeColor];
+    self.productNameLabel.backgroundColor = [UIColor whiteColor];
     [self.productBottomView addSubview:productNameLabel];
     
     self.productPriceLabel = [[UILabel alloc]initWithFrame:CGRectMake(42, 36, 92, 15)];
-    self.productPriceLabel.backgroundColor = [UIColor blackColor];
+    self.productPriceLabel.backgroundColor = [UIColor whiteColor];
     [self.productBottomView addSubview:productPriceLabel];
     
     

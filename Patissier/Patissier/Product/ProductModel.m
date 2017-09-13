@@ -10,7 +10,7 @@
 
 @implementation ProductModel
     
-- (instancetype)initWithTitle:(NSString *)title iD:(NSString *)iD price:(int *)price{
+- (instancetype)initWithTitle:(NSString *)title iD:(NSString *)iD price:(NSString * )price{
     
     _title = title;
     _iD = iD;

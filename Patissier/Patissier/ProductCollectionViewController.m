@@ -8,7 +8,12 @@
 
 #import "ProductCollectionViewController.h"
 #import "ProductCollectionViewCell.h"
+#import "ProductManager.h"
 @interface ProductCollectionViewController ()
+
+@property NSMutableArray<ProductModel*> * productArray;
+
+@property ProductManager* productManager;
 
 @end
 
@@ -30,7 +35,31 @@ static NSString * const reuseIdentifier = @"cell";
     
     
     [self.collectionView registerClass:[ProductCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
+    self.productManager = [ProductManager sharedInstance];
+    self.productArray = [[NSMutableArray alloc] init];
+    [self.productManager getProducts:^(NSMutableArray<ProductModel *> * _Nullable productArray, NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"got you");
+            
+            
+        }
+        
+        [self.productArray addObjectsFromArray: productArray];
+        
+        NSLog(@"%@", productArray);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            
+            NSLog(@"Before reload data.");
+            
+            [self.collectionView reloadData];
+            
+            NSLog(@"After reload data.");
+            
+        });
+
+    }];
     
 }
 
@@ -51,20 +80,32 @@ static NSString * const reuseIdentifier = @"cell";
 
 #pragma mark <UICollectionViewDataSource>
 
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//#warning Incomplete implementation, return the number of sections
-//    return 1;
-//}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+#warning Incomplete implementation, return the number of sections
+    return 1;
+}
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    NSLog(@"number of cell %d",self.productArray.count);
+    
+    
     //#warning Incomplete implementation, return the number of items
-    return 5;
+    
+        return self.productArray.count;
+//   return 10;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSLog(@"cellForItemAtIndexPath");
+    
     ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    cell.productNameLabel.text = self.productArray[indexPath.row].title;
+    cell.productPriceLabel.text = [NSString stringWithFormat:@"$%@",self.productArray[indexPath.row].price];
+    //    cell.productNameLabel.text = @"hi";
     return cell;
 }
 
