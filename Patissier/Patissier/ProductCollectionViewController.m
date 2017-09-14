@@ -106,6 +106,7 @@ static NSString * const reuseIdentifier = @"cell";
     cell.productNameLabel.text = self.productArray[indexPath.row].title;
     cell.productPriceLabel.text = [NSString stringWithFormat:@"$%@",self.productArray[indexPath.row].price];
     //    cell.productNameLabel.text = @"hi";
+    http://< website host >/products/< product id >/preview.jpg
     return cell;
 }
 
