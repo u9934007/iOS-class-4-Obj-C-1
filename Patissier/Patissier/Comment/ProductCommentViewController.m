@@ -115,8 +115,6 @@ typedef enum{
     return 1;
 }
     
-    
-    
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (!self.isLoading) {
@@ -204,8 +202,6 @@ typedef enum{
             }
         });
 
-        
-        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;

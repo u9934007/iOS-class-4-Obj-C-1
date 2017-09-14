@@ -10,11 +10,11 @@
 
 @interface ProductModel : NSObject
     
-@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString* title;
 @property (strong, nonatomic) NSString *iD;
 @property (nonatomic) int *price;
 @property (strong, nonatomic) NSString *imageURLString;
     
-- (instancetype)initWithTitle:(NSString *)title iD:(NSString *)iD price:(int *)price;
+- (instancetype)initWithTitle:(NSString*)title iD:(NSString* )iD price:(int *)price;
     
 @end
