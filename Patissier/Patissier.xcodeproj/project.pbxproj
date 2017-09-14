@@ -18,6 +18,11 @@
 		B259E99A1F67DBF3007D8461 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9981F67DBF3007D8461 /* CommentTableViewCell.m */; };
 		B259E99B1F67DBF3007D8461 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259E9991F67DBF3007D8461 /* CommentTableViewCell.xib */; };
 		B259E99E1F67E382007D8461 /* CommentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E99D1F67E382007D8461 /* CommentManager.m */; };
+		E55423F51F6A1F7A0035204E /* ProfileInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E55423F31F6A1F7A0035204E /* ProfileInformationTableViewCell.m */; };
+		E55423F61F6A1F7A0035204E /* ProfileInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55423F41F6A1F7A0035204E /* ProfileInformationTableViewCell.xib */; };
+		E55423FA1F6A30460035204E /* ProfileSegmentedControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E55423F81F6A30460035204E /* ProfileSegmentedControlTableViewCell.m */; };
+		E55423FB1F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55423F91F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib */; };
+		E55423FE1F6A53C80035204E /* ProfileTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55423FD1F6A53C80035204E /* ProfileTableTableViewController.m */; };
 		E59C31AC1F661FE800B33593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AB1F661FE800B33593 /* main.m */; };
 		E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AE1F661FE800B33593 /* AppDelegate.m */; };
 		E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B61F661FE800B33593 /* Assets.xcassets */; };
@@ -47,6 +52,14 @@
 		B259E9991F67DBF3007D8461 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentTableViewCell.xib; path = Comment/CommentTableViewCell.xib; sourceTree = "<group>"; };
 		B259E99C1F67E1D1007D8461 /* CommentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommentManager.h; path = API/CommentManager.h; sourceTree = "<group>"; };
 		B259E99D1F67E382007D8461 /* CommentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentManager.m; path = API/CommentManager.m; sourceTree = "<group>"; };
+		E55423F21F6A1F7A0035204E /* ProfileInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileInformationTableViewCell.h; sourceTree = "<group>"; };
+		E55423F31F6A1F7A0035204E /* ProfileInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileInformationTableViewCell.m; sourceTree = "<group>"; };
+		E55423F41F6A1F7A0035204E /* ProfileInformationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileInformationTableViewCell.xib; sourceTree = "<group>"; };
+		E55423F71F6A30460035204E /* ProfileSegmentedControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileSegmentedControlTableViewCell.h; sourceTree = "<group>"; };
+		E55423F81F6A30460035204E /* ProfileSegmentedControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileSegmentedControlTableViewCell.m; sourceTree = "<group>"; };
+		E55423F91F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileSegmentedControlTableViewCell.xib; sourceTree = "<group>"; };
+		E55423FC1F6A53C80035204E /* ProfileTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableTableViewController.h; sourceTree = "<group>"; };
+		E55423FD1F6A53C80035204E /* ProfileTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableTableViewController.m; sourceTree = "<group>"; };
 		E59C31A71F661FE800B33593 /* Patissier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patissier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59C31AB1F661FE800B33593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E59C31AD1F661FE800B33593 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +146,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E52E872E1F6A185800D2FA7A /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E59C31AD1F661FE800B33593 /* AppDelegate.h */,
+				E59C31AE1F661FE800B33593 /* AppDelegate.m */,
+			);
+			name = Appdelegate;
+			sourceTree = "<group>";
+		};
+		E55423F11F6A1F100035204E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E55423F21F6A1F7A0035204E /* ProfileInformationTableViewCell.h */,
+				E55423F31F6A1F7A0035204E /* ProfileInformationTableViewCell.m */,
+				E55423F41F6A1F7A0035204E /* ProfileInformationTableViewCell.xib */,
+				E55423F71F6A30460035204E /* ProfileSegmentedControlTableViewCell.h */,
+				E55423F81F6A30460035204E /* ProfileSegmentedControlTableViewCell.m */,
+				E55423F91F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib */,
+				E55423FC1F6A53C80035204E /* ProfileTableTableViewController.h */,
+				E55423FD1F6A53C80035204E /* ProfileTableTableViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		E59C319E1F661FE700B33593 = {
 			isa = PBXGroup;
 			children = (
@@ -154,14 +191,14 @@
 		E59C31A91F661FE800B33593 /* Patissier */ = {
 			isa = PBXGroup;
 			children = (
-				E59C31AD1F661FE800B33593 /* AppDelegate.h */,
-				E59C31AE1F661FE800B33593 /* AppDelegate.m */,
+				E55423F11F6A1F100035204E /* Profile */,
+				E52E872E1F6A185800D2FA7A /* Appdelegate */,
+				E59C31C41F66305700B33593 /* Landing */,
 				B259E96E1F6629B4007D8461 /* API */,
 				B259E96F1F6629BD007D8461 /* Comment */,
 				B259E9841F667118007D8461 /* Product */,
 				E5F2050C1F692F030010421E /* Facebook */,
 				B259E9881F67BC69007D8461 /* Constants */,
-				E59C31C41F66305700B33593 /* Landing */,
 				E59C31B61F661FE800B33593 /* Assets.xcassets */,
 				E59C31BB1F661FE800B33593 /* Info.plist */,
 				E59C31AA1F661FE800B33593 /* Supporting Files */,
@@ -259,9 +296,11 @@
 			files = (
 				B259E98E1F67C531007D8461 /* SeperatorTableViewCell.xib in Resources */,
 				B259E9961F67CA4F007D8461 /* ProductInformationTableViewCell.xib in Resources */,
+				E55423FB1F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib in Resources */,
 				E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */,
 				B259E99B1F67DBF3007D8461 /* CommentTableViewCell.xib in Resources */,
 				E59C31C61F6655CD00B33593 /* Landing.storyboard in Resources */,
+				E55423F61F6A1F7A0035204E /* ProfileInformationTableViewCell.xib in Resources */,
 				E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55423FE1F6A53C80035204E /* ProfileTableTableViewController.m in Sources */,
 				B259E98D1F67C531007D8461 /* SeperatorTableViewCell.m in Sources */,
 				B259E99A1F67DBF3007D8461 /* CommentTableViewCell.m in Sources */,
 				B259E9951F67CA4F007D8461 /* ProductInformationTableViewCell.m in Sources */,
@@ -330,6 +370,8 @@
 				E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */,
 				E59C31C31F66304D00B33593 /* LandingViewController.m in Sources */,
 				E59C31AC1F661FE800B33593 /* main.m in Sources */,
+				E55423F51F6A1F7A0035204E /* ProfileInformationTableViewCell.m in Sources */,
+				E55423FA1F6A30460035204E /* ProfileSegmentedControlTableViewCell.m in Sources */,
 				B259E9861F66712F007D8461 /* ProductModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

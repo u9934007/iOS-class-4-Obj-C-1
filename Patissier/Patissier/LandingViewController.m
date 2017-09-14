@@ -6,15 +6,12 @@
 //  Copyright © 2017年 Brady Huang. All rights reserved.
 //
 
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
 #import "LandingViewController.h"
 
 @interface LandingViewController ()
 
 @property CAGradientLayer *backgroundGradientLayer;
-
-- (void) errorHandler:(void (^)(NSError* error))callbackBlock;
 
 @end
 

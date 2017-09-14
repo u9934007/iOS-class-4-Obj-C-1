@@ -15,4 +15,6 @@
 #define PRODUCTINFORMATION_TABLEVIEW_CELL   @"ProductInformationTableViewCell"
 #define SEPERATOR_TABLEVIEW_CELL   @"SeperatorTableViewCell"
 #define COMMENT_TABLEVIEW_CELL   @"CommentTableViewCell"
+#define PROFILE_INFORMATION_TABLEVIEW_CELL   @"ProfileInformationTableViewCell"
+#define PROFILE_SEGMENTEDCONTROL_TABLEVIEW_CELL   @"ProfileSegmentedControlTableViewCell"
 
