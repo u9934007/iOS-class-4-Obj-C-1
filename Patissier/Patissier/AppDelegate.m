@@ -17,41 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-//    layout.estimatedItemSize = CGSizeMake(154, 160);
-    layout.itemSize = CGSizeMake(154, 160);
-
-    
-    layout.minimumLineSpacing = 22;
-    
-    layout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20);
-    
-    
-    ProductCollectionViewController *productCollectionViewController = [[ProductCollectionViewController alloc]initWithCollectionViewLayout:layout];
-    
-    UINavigationController *storeNavigationController = [[UINavigationController alloc]initWithRootViewController:productCollectionViewController];
-    
-    UIViewController *profileViewController = [[UIViewController alloc]init ];
-    
-    UINavigationController *profileNavigationController = [[UINavigationController alloc]initWithRootViewController:profileViewController];
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc]init];
-    
-    [storeNavigationController.tabBarItem initWithTitle:@"Store" image:[UIImage imageNamed:@"icon-store"] tag:0];
-    [profileNavigationController.tabBarItem initWithTitle:@"Profile" image:[UIImage imageNamed:@"icon-profile"] tag:1];
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     
 
-    
-    NSArray *tabBarControllers = [[NSArray alloc]initWithObjects:storeNavigationController, profileNavigationController, nil];
-    
-    [tabBarController setViewControllers:tabBarControllers ];
-    self.window.rootViewController = tabBarController;
-        [self.window makeKeyAndVisible];
-    
-
-    
     
     
     
@@ -72,9 +41,68 @@
 //
 //    [self.window makeKeyAndVisible];
 
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
+        
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+        
+        layout.itemSize = CGSizeMake(154, 160);
+        
+        layout.minimumLineSpacing = 22;
+        
+        layout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20);
+        
+        
+        ProductCollectionViewController *productCollectionViewController = [[ProductCollectionViewController alloc]initWithCollectionViewLayout:layout];
+        
+        UINavigationController *storeNavigationController = [[UINavigationController alloc]initWithRootViewController:productCollectionViewController];
+        
+        UIViewController *profileViewController = [[UIViewController alloc]init ];
+        
+        UINavigationController *profileNavigationController = [[UINavigationController alloc]initWithRootViewController:profileViewController];
+        
+        UITabBarController *tabBarController = [[UITabBarController alloc]init];
+        
+        [storeNavigationController.tabBarItem initWithTitle:@"Store" image:[UIImage imageNamed:@"icon-store"] tag:0];
+        [profileNavigationController.tabBarItem initWithTitle:@"Profile" image:[UIImage imageNamed:@"icon-profile"] tag:1];
+        
+        
+        
+        NSArray *tabBarControllers = [[NSArray alloc]initWithObjects:storeNavigationController, profileNavigationController, nil];
+        
+        [tabBarController setViewControllers:tabBarControllers ];
+        self.window.rootViewController = tabBarController;
+        
+self.window.rootViewController = tabBarController;
+//        self.window.rootViewController = vc;
+        
+    } else {
+    
+        LandingViewController *landingViewController = [[UIStoryboard storyboardWithName: @"Landing" bundle:nil] instantiateViewControllerWithIdentifier: @"LandingViewController"];
+        
+        self.window.rootViewController = landingViewController;
+        
+    }
+
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                    ];
+    // Add any custom logic here.
+    return handled;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -95,6 +123,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 

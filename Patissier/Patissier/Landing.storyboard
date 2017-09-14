@@ -50,6 +50,9 @@
                                 <state key="normal" title="Sign In with Facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInWithFacebook:" destination="Wjq-cf-jQy" eventType="touchUpInside" id="eoH-fs-8kb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-Uo-WSY">
                                 <rect key="frame" x="128.5" y="111" width="117.5" height="60"/>
@@ -75,7 +78,7 @@
                             <constraint firstItem="TAI-Wv-UmJ" firstAttribute="top" secondItem="wOz-iO-Vke" secondAttribute="bottom" id="WCB-0e-4cB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1yT-Jj-tbA" secondAttribute="trailing" constant="-16" id="cIJ-Xk-w8U"/>
                             <constraint firstItem="1yT-Jj-tbA" firstAttribute="height" secondItem="SgZ-kI-jOK" secondAttribute="height" multiplier="115:667" id="dr4-tr-YsF"/>
-                            <constraint firstItem="fn4-RS-vvD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jw9-h7-z7S" secondAttribute="leading" constant="96" id="fwb-bf-mjg"/>
+                            <constraint firstItem="fn4-RS-vvD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jw9-h7-z7S" secondAttribute="leading" constant="20" symbolic="YES" id="fwb-bf-mjg"/>
                             <constraint firstAttribute="trailing" secondItem="hQ4-KI-uJH" secondAttribute="trailing" id="lfE-qe-bsB"/>
                             <constraint firstAttribute="trailing" secondItem="SgZ-kI-jOK" secondAttribute="trailing" id="moq-Rb-84W"/>
                             <constraint firstItem="z1g-Uo-WSY" firstAttribute="top" secondItem="1yT-Jj-tbA" secondAttribute="bottom" id="n7Z-N3-wga"/>
