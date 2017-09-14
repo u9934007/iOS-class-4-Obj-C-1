@@ -186,7 +186,7 @@
                          NSArray *tabBarControllers = [[NSArray alloc]initWithObjects:storeNavigationController, profileNavigationController, nil];
                          
                          [tabBarController setViewControllers:tabBarControllers ];
-                                                  [self presentViewController:tabBarController animated:true completion:nil];
+                        [self presentViewController:tabBarController animated:true completion:nil];
 
                      } else {
 
