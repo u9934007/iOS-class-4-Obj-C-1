@@ -10,6 +10,7 @@
 		124F50711F68FABD004D00CE /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F50701F68FABD004D00CE /* ProductCollectionViewController.m */; };
 		124F50741F68FAE5004D00CE /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F50731F68FAE5004D00CE /* ProductCollectionViewCell.m */; };
 		124F50781F690CDE004D00CE /* ProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F50771F690CDE004D00CE /* ProductManager.m */; };
+		124F50801F6B6F54004D00CE /* GradientNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F507F1F6B6F54004D00CE /* GradientNavigationViewController.m */; };
 		A3B9BD7C8582FA3F2883C423 /* Pods_Patissier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74226761BB7D1EACD3355303 /* Pods_Patissier.framework */; };
 		B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9701F6629F6007D8461 /* ProductCommentViewController.m */; };
 		B259E9831F666AD4007D8461 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9821F666AD4007D8461 /* CommentModel.m */; };
@@ -42,6 +43,8 @@
 		124F50731F68FAE5004D00CE /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 		124F50761F690C9B004D00CE /* ProductManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductManager.h; path = Product/ProductManager.h; sourceTree = "<group>"; };
 		124F50771F690CDE004D00CE /* ProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductManager.m; path = Product/ProductManager.m; sourceTree = "<group>"; };
+		124F507E1F6B6F54004D00CE /* GradientNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientNavigationViewController.h; path = Navigation/GradientNavigationViewController.h; sourceTree = "<group>"; };
+		124F507F1F6B6F54004D00CE /* GradientNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientNavigationViewController.m; path = Navigation/GradientNavigationViewController.m; sourceTree = "<group>"; };
 		373682DD10418AD84A0E470E /* Pods-Patissier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patissier.release.xcconfig"; path = "Pods/Target Support Files/Pods-Patissier/Pods-Patissier.release.xcconfig"; sourceTree = "<group>"; };
 		74226761BB7D1EACD3355303 /* Pods_Patissier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patissier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98894CEEDDB030D3617EB7CF /* Pods-Patissier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patissier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Patissier/Pods-Patissier.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		124F507D1F6B6F37004D00CE /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				124F507E1F6B6F54004D00CE /* GradientNavigationViewController.h */,
+				124F507F1F6B6F54004D00CE /* GradientNavigationViewController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		1F6058FFA881CEB6B783310F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +217,7 @@
 		E59C31A91F661FE800B33593 /* Patissier */ = {
 			isa = PBXGroup;
 			children = (
+				124F507D1F6B6F37004D00CE /* Navigation */,
 				E59C31AD1F661FE800B33593 /* AppDelegate.h */,
 				E59C31AE1F661FE800B33593 /* AppDelegate.m */,
 				B259E96E1F6629B4007D8461 /* API */,
@@ -378,10 +391,10 @@
 			files = (
 				B259E98D1F67C531007D8461 /* SeperatorTableViewCell.m in Sources */,
 				124F50781F690CDE004D00CE /* ProductManager.m in Sources */,
+				124F50801F6B6F54004D00CE /* GradientNavigationViewController.m in Sources */,
 				B259E99A1F67DBF3007D8461 /* CommentTableViewCell.m in Sources */,
 				B259E9AB1F691C4F007D8461 /* CheckoutViewController.m in Sources */,
 				124F50711F68FABD004D00CE /* ProductCollectionViewController.m in Sources */,
-				E59C31B21F661FE800B33593 /* ViewController.m in Sources */,
 				B259E9951F67CA4F007D8461 /* ProductInformationTableViewCell.m in Sources */,
 				B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */,
 				B259E99E1F67E382007D8461 /* CommentManager.m in Sources */,

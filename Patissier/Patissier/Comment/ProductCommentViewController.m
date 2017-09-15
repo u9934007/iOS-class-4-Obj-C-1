@@ -47,7 +47,7 @@ typedef enum{
     
 - (id)initWithProduct: (ProductModel*)product{
     
-        self = [super initWithStyle:UITableViewStyleGrouped];
+        self = [super initWithStyle:UITableViewStylePlain];
     
         self.product = product;
     
@@ -57,7 +57,6 @@ typedef enum{
      
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setDefaultProperty];
         
     self.title = @"Product";
@@ -168,12 +167,13 @@ typedef enum{
         
         cell.productTitleLabel.text =  self.product.title;
         
+
         cell.productPriceLabel.text = [NSString stringWithFormat: @"$%@", self.product.price];
         
         [cell.addToCartButton addTarget:self
                               action:@selector(pressAddToCart)
                               forControlEvents:UIControlEventTouchUpInside];
-        
+      
         dispatch_async(dispatch_get_global_queue(0,0), ^{
             NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: self.product.imageURLString]];
             if ( data != nil )

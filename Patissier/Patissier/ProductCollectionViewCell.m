@@ -36,11 +36,15 @@
     
     self.productPriceLabel = [[UILabel alloc]initWithFrame:CGRectMake(42, 36, 92, 15)];
     self.productPriceLabel.backgroundColor = [UIColor whiteColor];
+    self.productPriceLabel.textAlignment = NSTextAlignmentRight;
     [self.productBottomView addSubview:productPriceLabel];
     
     
     self.productHeartButton = [[UIButton alloc]initWithFrame:CGRectMake(8, 34, 30, 20)];
     self.productHeartButton.backgroundColor = [UIColor whiteColor];
+    [self.productHeartButton setImage:[UIImage imageNamed:@"icon-heart"] forState:UIControlStateNormal];
+    self.productHeartButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.productHeartButton.layer.borderWidth = 1;
     [self.productBottomView addSubview:productHeartButton];
     
     

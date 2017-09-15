@@ -9,15 +9,30 @@
 #import "ProductCollectionViewController.h"
 #import "ProductCollectionViewCell.h"
 #import "ProductManager.h"
+#import "ProductCommentViewController.h"
 @interface ProductCollectionViewController ()
 
 @property NSMutableArray<ProductModel*> * productArray;
 
+@property NSMutableArray<UIImage*> * productImageArray;
+@property NSMutableDictionary *productImageDictionary;
 @property ProductManager* productManager;
 
 @end
 
+
+
 @implementation ProductCollectionViewController
+
+//-(int)a {
+//    return self.a+5;
+//}
+//-(void)setA:(int)a{
+//    self.a = a;
+//    
+//}
+
+
 
 static NSString * const reuseIdentifier = @"cell";
 
@@ -28,8 +43,12 @@ static NSString * const reuseIdentifier = @"cell";
 
 
 - (void)viewDidLoad {
+    
+    
     [super viewDidLoad];
-    self.collectionView.backgroundColor = [UIColor redColor];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.productImageArray = [[NSMutableArray alloc]init];
+    self.productImageDictionary = [[NSMutableDictionary alloc]init];
     
     
     
@@ -48,14 +67,39 @@ static NSString * const reuseIdentifier = @"cell";
         
         NSLog(@"%@", productArray);
         
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            for (int i=0;i<self.productArray.count;i++) {
+                NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: self.productArray[i].imageURLString]];
+                if ( data != nil )
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        // WARNING: is the cell still using the same data by this point??
+                        [self.productImageDictionary setValue:[UIImage imageWithData: data] forKey: self.productArray[i].iD];
+                        [self.productImageArray addObject:[UIImage imageWithData: data]];
+                        [self.collectionView reloadData];
+                        
+//                        [[NSString alloc] initWithFormat: @"%@", _product.title]
+//                        
+                    });
+                    
+                }
+            
+            }
+            
+        });
+
+        
+        
+        
+        
+        
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             
-            NSLog(@"Before reload data.");
             
             [self.collectionView reloadData];
             
-            NSLog(@"After reload data.");
             
         });
 
@@ -96,7 +140,9 @@ static NSString * const reuseIdentifier = @"cell";
         return self.productArray.count;
 //   return 10;
 }
-
+-(void)heartButtonTapped:(NSObject *)sender {
+    NSLog(@"%@",sender);
+}
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"cellForItemAtIndexPath");
@@ -105,9 +151,12 @@ static NSString * const reuseIdentifier = @"cell";
     
     cell.productNameLabel.text = self.productArray[indexPath.row].title;
     cell.productPriceLabel.text = [NSString stringWithFormat:@"$%@",self.productArray[indexPath.row].price];
-    //    cell.productNameLabel.text = @"hi";
-    http://< website host >/products/< product id >/preview.jpg
-    return cell;
+    [cell.productHeartButton addTarget:self action:@selector(heartButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    if (indexPath.row<self.productImageDictionary.count){
+        cell.productImageView.image = [self.productImageDictionary objectForKey:self.productArray[indexPath.row].iD];
+    }
+    
+        return cell;
 }
 
 
@@ -141,5 +190,13 @@ static NSString * const reuseIdentifier = @"cell";
 	
  }
  */
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ProductCommentViewController *productCommentViewController = [[ProductCommentViewController alloc]initWithProduct:self.productArray[indexPath.row]];
+
+    [self.navigationController showViewController:productCommentViewController sender:self];
+
+}
 
 @end
