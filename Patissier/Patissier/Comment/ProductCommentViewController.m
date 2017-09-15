@@ -13,6 +13,7 @@
 #import "SeperatorTableViewCell.h"
 #import "CommentTableViewCell.h"
 #import "Constants.h"
+#import "CheckoutViewController.h"
 
 @interface ProductCommentViewController () <UITableViewDataSource>
 
@@ -42,6 +43,8 @@ typedef enum{
 
 @implementation ProductCommentViewController
     
+@synthesize product = _product;
+    
 - (id)initWithProduct: (ProductModel*)product{
     
         self = [super initWithStyle:UITableViewStyleGrouped];
@@ -55,15 +58,13 @@ typedef enum{
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // TempInformation
-    
     [self setDefaultProperty];
         
     self.title = @"Product";
     
     [self setUpTableView];
     
-    [self.commentManager getCommentsForProductID: _product.iD withCompletionHandler:^(NSMutableArray<CommentModel *> * _Nullable commentArray, NSError * _Nullable error) {
+    [self.commentManager getCommentsForProductID: self.product.iD withCompletionHandler:^(NSMutableArray<CommentModel *> * _Nullable commentArray, NSError * _Nullable error) {
         if (!error) {
             
             [self.commentArray addObjectsFromArray: commentArray];
@@ -109,13 +110,22 @@ typedef enum{
 
 }
     
+- (void)pressAddToCart {
+
+    CheckoutViewController *checkoutViewController = [[CheckoutViewController alloc] initWithProduct: self.product];
+    
+    UINavigationController *checkoutNavigationController = [[UINavigationController alloc] initWithRootViewController: checkoutViewController ];
+    
+    [self presentViewController: checkoutNavigationController animated:YES completion:nil];
+    
+    
+}
+    
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 1;
 }
-    
-    
     
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -156,12 +166,16 @@ typedef enum{
         
         ProductInformationTableViewCell *cell = (ProductInformationTableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"ProductInformationTableViewCell" forIndexPath:indexPath];
         
-        cell.productTitleLabel.text =  [[NSString alloc] initWithFormat: @"%@", _product.title];
+        cell.productTitleLabel.text =  self.product.title;
         
-        cell.productPriceLabel.text = [[NSString alloc] initWithFormat: @"$%zd", _product.price];
+        cell.productPriceLabel.text = [NSString stringWithFormat: @"$%@", self.product.price];
+        
+        [cell.addToCartButton addTarget:self
+                              action:@selector(pressAddToCart)
+                              forControlEvents:UIControlEventTouchUpInside];
         
         dispatch_async(dispatch_get_global_queue(0,0), ^{
-            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: _product.imageURLString]];
+            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: self.product.imageURLString]];
             if ( data != nil )
             {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -188,12 +202,12 @@ typedef enum{
         
         CommentTableViewCell *cell = (CommentTableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCell" forIndexPath:indexPath];
         
-        cell.userNameLabel.text = _commentArray[indexPath.row -2].userName;
+        cell.userNameLabel.text = self.commentArray[indexPath.row -2].userName;
         
-        cell.commentContentLabel.text = _commentArray[indexPath.row -2].text;
+        cell.commentContentLabel.text = self.commentArray[indexPath.row -2].text;
         
         dispatch_async(dispatch_get_global_queue(0,0), ^{
-            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: _commentArray[indexPath.row -2].userImageURLString]];
+            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: self.commentArray[indexPath.row -2].userImageURLString]];
             if ( data != nil )
             {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -204,8 +218,6 @@ typedef enum{
             }
         });
 
-        
-        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
