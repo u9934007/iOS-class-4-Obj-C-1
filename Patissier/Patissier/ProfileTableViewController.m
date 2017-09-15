@@ -110,26 +110,39 @@
     }
     
     
-    return 50;
+    return 0;
     
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    ProfileInformationTableViewCell *profileInformationTableViewCell= [[ProfileInformationTableViewCell alloc] init];
     
     ProfileSegmentedControlTableViewCell *profileSegmentedControlTableViewCell = [[ProfileSegmentedControlTableViewCell alloc] init];
     
     UITableViewCell *cell = [[UITableViewCell alloc]init];
     
     if (indexPath.section == information) {
+
+        ProfileInformationTableViewCell *profileInformationTableViewCell = (ProfileInformationTableViewCell *) [tableView dequeueReusableCellWithIdentifier:PROFILE_INFORMATION_TABLEVIEW_CELL forIndexPath:indexPath];
         
         profileInformationTableViewCell.backgroundColor = [UIColor redColor];
         
-        profileInformationTableViewCell.nameLabel.text = @"test";
-        
-        profileInformationTableViewCell.nameLabel.backgroundColor = [UIColor blackColor];
+        profileInformationTableViewCell.nameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
+
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+
+            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [[NSUserDefaults standardUserDefaults] objectForKey:@"picture"]]];
+
+            if ( data != nil )
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+
+                    profileInformationTableViewCell.pictureImageView.image = [UIImage imageWithData: data];
+                });
+                
+            }
+        });
         
         profileInformationTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -137,7 +150,7 @@
         
     }   else if (indexPath.section == segmentedControl) {
         
-        profileSegmentedControlTableViewCell.backgroundColor = [UIColor blueColor];
+        ProfileSegmentedControlTableViewCell *profileSegmentedControlTableViewCell = (ProfileSegmentedControlTableViewCell *) [tableView dequeueReusableCellWithIdentifier:PROFILE_SEGMENTEDCONTROL_TABLEVIEW_CELL forIndexPath:indexPath];
         
         profileSegmentedControlTableViewCell.leftTitle = NSLocalizedString(@"Favorite", "");
         
