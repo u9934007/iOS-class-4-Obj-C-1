@@ -28,6 +28,7 @@
 		B259E9B51F692CDA007D8461 /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259E9B31F692CDA007D8461 /* CheckoutTableViewCell.xib */; };
 		B259E9B81F6A61C7007D8461 /* CheckoutBottonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9B71F6A61C7007D8461 /* CheckoutBottonView.m */; };
 		B259E9BA1F6A61DA007D8461 /* CheckoutBottonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259E9B91F6A61DA007D8461 /* CheckoutBottonView.xib */; };
+		B259E9BD1F6BB273007D8461 /* CheckoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9BC1F6BB273007D8461 /* CheckoutModel.m */; };
 		E59C31AC1F661FE800B33593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AB1F661FE800B33593 /* main.m */; };
 		E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AE1F661FE800B33593 /* AppDelegate.m */; };
 		E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B61F661FE800B33593 /* Assets.xcassets */; };
@@ -74,6 +75,8 @@
 		B259E9B61F6A61C7007D8461 /* CheckoutBottonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutBottonView.h; path = Checkout/CheckoutBottonView.h; sourceTree = "<group>"; };
 		B259E9B71F6A61C7007D8461 /* CheckoutBottonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutBottonView.m; path = Checkout/CheckoutBottonView.m; sourceTree = "<group>"; };
 		B259E9B91F6A61DA007D8461 /* CheckoutBottonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckoutBottonView.xib; path = Checkout/CheckoutBottonView.xib; sourceTree = "<group>"; };
+		B259E9BB1F6BB268007D8461 /* CheckoutModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CheckoutModel.h; path = Checkout/CheckoutModel.h; sourceTree = "<group>"; };
+		B259E9BC1F6BB273007D8461 /* CheckoutModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutModel.m; path = Checkout/CheckoutModel.m; sourceTree = "<group>"; };
 		E59C31A71F661FE800B33593 /* Patissier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patissier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59C31AB1F661FE800B33593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E59C31AD1F661FE800B33593 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				B259E9B61F6A61C7007D8461 /* CheckoutBottonView.h */,
 				B259E9B71F6A61C7007D8461 /* CheckoutBottonView.m */,
 				B259E9B91F6A61DA007D8461 /* CheckoutBottonView.xib */,
+				B259E9BB1F6BB268007D8461 /* CheckoutModel.h */,
+				B259E9BC1F6BB273007D8461 /* CheckoutModel.m */,
 			);
 			name = Checkout;
 			sourceTree = "<group>";
@@ -381,7 +386,6 @@
 				B259E99A1F67DBF3007D8461 /* CommentTableViewCell.m in Sources */,
 				B259E9AB1F691C4F007D8461 /* CheckoutViewController.m in Sources */,
 				124F50711F68FABD004D00CE /* ProductCollectionViewController.m in Sources */,
-				E59C31B21F661FE800B33593 /* ViewController.m in Sources */,
 				B259E9951F67CA4F007D8461 /* ProductInformationTableViewCell.m in Sources */,
 				B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */,
 				B259E99E1F67E382007D8461 /* CommentManager.m in Sources */,
@@ -394,6 +398,7 @@
 				E59C31AC1F661FE800B33593 /* main.m in Sources */,
 				124F50741F68FAE5004D00CE /* ProductCollectionViewCell.m in Sources */,
 				B259E9861F66712F007D8461 /* ProductModel.m in Sources */,
+				B259E9BD1F6BB273007D8461 /* CheckoutModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

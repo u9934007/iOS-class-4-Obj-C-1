@@ -14,15 +14,19 @@
 
 
 @interface CheckoutViewController () <UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
-
+    
 @property (strong,nonatomic) UITableView *tableView;
     
 @property (strong,nonatomic) CheckoutBottonView *bottonView;
+    
+@property (strong,nonatomic) UIPickerView *cityPickerView;
 
-@property (strong,nonatomic) UIPickerView  *cityPickerView;
+@property (strong,nonatomic) UIPickerView *titlePickerView;
     
 @property (strong, nonatomic) NSArray *cityElements;
-
+    
+@property (strong, nonatomic) NSArray *titleElements;
+    
 @end
 
 @implementation CheckoutViewController
@@ -37,7 +41,7 @@
     
 }
     
-
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -52,25 +56,27 @@
     [self setUpTableView];
     
     [self setUpDismissButton];
-   
+    
 }
     
-// MARK: SetUp
+    // MARK: SetUp
     
 -(void)setUpDefaultProperty {
     
     _cityElements = @[@"Taipei", @"Taichung", @"Tainan", @"Taitung"];
     
+    _titleElements = @[@"Mr.", @"Mrs."];
+    
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     
     [self.view addSubview: self.tableView];
-
+    
     _bottonView = [[[NSBundle mainBundle] loadNibNamed:@"CheckoutBottonView" owner:self options:nil] lastObject];
     
     [self.view addSubview: self.bottonView];
-
+    
 }
-
+    
 -(void)setUpDismissButton {
     
     UIImage *btnImage = [UIImage imageNamed:@"icon-cross"];
@@ -80,7 +86,7 @@
     self.navigationItem.leftBarButtonItem = dismissButton;
     
 }
-
+    
 - (void)setUpBottonViewLayout{
     
     self.bottonView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -161,13 +167,13 @@
                                             constant:0];
     /* Fixed Height */
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint
-                                            constraintWithItem:self.tableView
-                                            attribute:NSLayoutAttributeTop
-                                            relatedBy:NSLayoutRelationEqual
-                                            toItem:self.view
-                                            attribute:NSLayoutAttributeTop
-                                            multiplier:1.0
-                                            constant:0];
+                                         constraintWithItem:self.tableView
+                                         attribute:NSLayoutAttributeTop
+                                         relatedBy:NSLayoutRelationEqual
+                                         toItem:self.view
+                                         attribute:NSLayoutAttributeTop
+                                         multiplier:1.0
+                                         constant:0];
     
     /* 4. Add the constraints to button's superview*/
     [self.view addConstraints:@[leftConstraint, rightConstraint, bottonConstraint, topConstraint]];
@@ -181,16 +187,16 @@
     UINib *checkoutNib = [UINib nibWithNibName: CHECKOUT_TABLEVIEW_CELL bundle:nil];
     
     [self.tableView registerNib:checkoutNib forCellReuseIdentifier:CHECKOUT_TABLEVIEW_CELL];
-
+    
 }
     
     
 - (void)dismissViewController {
     
     [self dismissViewControllerAnimated:YES completion: nil];
-
+    
 }
-
+    
 #pragma mark - Table view data source / delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -220,7 +226,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 0) {
-    
+        
         CheckoutItemTableViewCell *cell = (CheckoutItemTableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"CheckoutItemTableViewCell" forIndexPath:indexPath];
         
         dispatch_async(dispatch_get_global_queue(0,0), ^{
@@ -244,7 +250,7 @@
         [self setUpCheckoutItemCellWith: cell];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+        
         return cell;
         
     } else {
@@ -256,30 +262,28 @@
         [self setUpCheckoutCellWith: cell];
         
         return cell;
-    
-    
+        
+        
     }
     
 }
-
+    
 -(void)setUpCheckoutItemCellWith: (CheckoutItemTableViewCell*) cell {
     
     [cell.stepper addTarget: self action: @selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
     
 }
-
+    
 -(void)valueChanged: (UIStepper*) stepper{
     
     CheckoutItemTableViewCell *cell = (CheckoutItemTableViewCell *) stepper.superview.superview;
     
     cell.quantityLabel.text =  [NSString stringWithFormat: @"%d", (int)stepper.value];
- 
-}
-
--(void)setUpCheckoutCellWith: (CheckoutTableViewCell*) cell {
     
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+}
+    
+-(void)setUpCheckoutCellWith: (CheckoutTableViewCell*) cell {
+
     self.cityPickerView = [[UIPickerView alloc] init];
     
     self.cityPickerView.delegate = self;
@@ -288,25 +292,67 @@
     
     cell.cityTextField.inputView = self.cityPickerView;
     
+    self.titlePickerView = [[UIPickerView alloc] init];
+    
+    self.titlePickerView.delegate = self;
+    
+    self.titlePickerView.dataSource = self;
+    
+    cell.titleTextField.inputView = self.titlePickerView;
     
 }
     
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
     return 1;
-
+    
 }
     
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    return [self.cityElements count];
-
+    if (pickerView == self.cityPickerView) {
+    
+        return [self.cityElements count];
+        
+    }else if (pickerView == self.titlePickerView) {
+        
+         return [self.titleElements count];
+    
+    }
+    
+    return 0;
+    
 }
     
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    if (pickerView == self.cityPickerView) {
+        
+        return [self.cityElements objectAtIndex:row];
+        
+    }else if (pickerView == self.titlePickerView) {
+        
+        return [self.titleElements objectAtIndex:row];
    
-    return [self.cityElements objectAtIndex:row];
+    } else {
+    
+        return 0;
+    
+    }
 
 }
+    
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    if (pickerView == self.cityPickerView) {
+        
+       
+    }else if (pickerView == self.titlePickerView) {
 
+        
+    }
+
+}
+    
+    
 @end
