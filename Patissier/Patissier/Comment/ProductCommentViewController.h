@@ -14,6 +14,6 @@
     
 @property ProductModel* product;
     
-- (id)initWithProduct: (ProductModel*)product;
+- (id)initWithProduct: (ProductModel*)product ;
     
 @end

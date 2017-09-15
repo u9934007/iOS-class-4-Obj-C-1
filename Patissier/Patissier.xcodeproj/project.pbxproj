@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124F50711F68FABD004D00CE /* ProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F50701F68FABD004D00CE /* ProductCollectionViewController.m */; };
+		124F50741F68FAE5004D00CE /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F50731F68FAE5004D00CE /* ProductCollectionViewCell.m */; };
+		124F50781F690CDE004D00CE /* ProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F50771F690CDE004D00CE /* ProductManager.m */; };
+		124F50801F6B6F54004D00CE /* GradientNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F507F1F6B6F54004D00CE /* GradientNavigationViewController.m */; };
 		A3B9BD7C8582FA3F2883C423 /* Pods_Patissier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74226761BB7D1EACD3355303 /* Pods_Patissier.framework */; };
 		B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9701F6629F6007D8461 /* ProductCommentViewController.m */; };
 		B259E9831F666AD4007D8461 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9821F666AD4007D8461 /* CommentModel.m */; };
@@ -23,6 +27,13 @@
 		E55423FA1F6A30460035204E /* ProfileSegmentedControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E55423F81F6A30460035204E /* ProfileSegmentedControlTableViewCell.m */; };
 		E55423FB1F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55423F91F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib */; };
 		E55423FE1F6A53C80035204E /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55423FD1F6A53C80035204E /* ProfileTableViewController.m */; };
+		B259E9A71F69196F007D8461 /* CheckoutItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9A51F69196F007D8461 /* CheckoutItemTableViewCell.m */; };
+		B259E9A81F69196F007D8461 /* CheckoutItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259E9A61F69196F007D8461 /* CheckoutItemTableViewCell.xib */; };
+		B259E9AB1F691C4F007D8461 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9AA1F691C4F007D8461 /* CheckoutViewController.m */; };
+		B259E9B41F692CDA007D8461 /* CheckoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9B21F692CDA007D8461 /* CheckoutTableViewCell.m */; };
+		B259E9B51F692CDA007D8461 /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259E9B31F692CDA007D8461 /* CheckoutTableViewCell.xib */; };
+		B259E9B81F6A61C7007D8461 /* CheckoutBottonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B259E9B71F6A61C7007D8461 /* CheckoutBottonView.m */; };
+		B259E9BA1F6A61DA007D8461 /* CheckoutBottonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259E9B91F6A61DA007D8461 /* CheckoutBottonView.xib */; };
 		E59C31AC1F661FE800B33593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AB1F661FE800B33593 /* main.m */; };
 		E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AE1F661FE800B33593 /* AppDelegate.m */; };
 		E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B61F661FE800B33593 /* Assets.xcassets */; };
@@ -31,6 +42,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		124F506F1F68FABD004D00CE /* ProductCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewController.h; sourceTree = "<group>"; };
+		124F50701F68FABD004D00CE /* ProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewController.m; sourceTree = "<group>"; };
+		124F50721F68FAE5004D00CE /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
+		124F50731F68FAE5004D00CE /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
+		124F50761F690C9B004D00CE /* ProductManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProductManager.h; path = Product/ProductManager.h; sourceTree = "<group>"; };
+		124F50771F690CDE004D00CE /* ProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductManager.m; path = Product/ProductManager.m; sourceTree = "<group>"; };
+		124F507E1F6B6F54004D00CE /* GradientNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientNavigationViewController.h; path = Navigation/GradientNavigationViewController.h; sourceTree = "<group>"; };
+		124F507F1F6B6F54004D00CE /* GradientNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientNavigationViewController.m; path = Navigation/GradientNavigationViewController.m; sourceTree = "<group>"; };
 		373682DD10418AD84A0E470E /* Pods-Patissier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patissier.release.xcconfig"; path = "Pods/Target Support Files/Pods-Patissier/Pods-Patissier.release.xcconfig"; sourceTree = "<group>"; };
 		74226761BB7D1EACD3355303 /* Pods_Patissier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Patissier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98894CEEDDB030D3617EB7CF /* Pods-Patissier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Patissier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Patissier/Pods-Patissier.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +79,17 @@
 		E55423F91F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileSegmentedControlTableViewCell.xib; sourceTree = "<group>"; };
 		E55423FC1F6A53C80035204E /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
 		E55423FD1F6A53C80035204E /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
+		B259E9A41F69196F007D8461 /* CheckoutItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutItemTableViewCell.h; path = Checkout/CheckoutItemTableViewCell.h; sourceTree = "<group>"; };
+		B259E9A51F69196F007D8461 /* CheckoutItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutItemTableViewCell.m; path = Checkout/CheckoutItemTableViewCell.m; sourceTree = "<group>"; };
+		B259E9A61F69196F007D8461 /* CheckoutItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckoutItemTableViewCell.xib; path = Checkout/CheckoutItemTableViewCell.xib; sourceTree = "<group>"; };
+		B259E9A91F691C4F007D8461 /* CheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutViewController.h; path = Checkout/CheckoutViewController.h; sourceTree = "<group>"; };
+		B259E9AA1F691C4F007D8461 /* CheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutViewController.m; path = Checkout/CheckoutViewController.m; sourceTree = "<group>"; };
+		B259E9B11F692CDA007D8461 /* CheckoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutTableViewCell.h; path = Checkout/CheckoutTableViewCell.h; sourceTree = "<group>"; };
+		B259E9B21F692CDA007D8461 /* CheckoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutTableViewCell.m; path = Checkout/CheckoutTableViewCell.m; sourceTree = "<group>"; };
+		B259E9B31F692CDA007D8461 /* CheckoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckoutTableViewCell.xib; path = Checkout/CheckoutTableViewCell.xib; sourceTree = "<group>"; };
+		B259E9B61F6A61C7007D8461 /* CheckoutBottonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutBottonView.h; path = Checkout/CheckoutBottonView.h; sourceTree = "<group>"; };
+		B259E9B71F6A61C7007D8461 /* CheckoutBottonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutBottonView.m; path = Checkout/CheckoutBottonView.m; sourceTree = "<group>"; };
+		B259E9B91F6A61DA007D8461 /* CheckoutBottonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckoutBottonView.xib; path = Checkout/CheckoutBottonView.xib; sourceTree = "<group>"; };
 		E59C31A71F661FE800B33593 /* Patissier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patissier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59C31AB1F661FE800B33593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E59C31AD1F661FE800B33593 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		124F507D1F6B6F37004D00CE /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				124F507E1F6B6F54004D00CE /* GradientNavigationViewController.h */,
+				124F507F1F6B6F54004D00CE /* GradientNavigationViewController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		1F6058FFA881CEB6B783310F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +164,12 @@
 			children = (
 				B259E9871F667139007D8461 /* ProductModel.h */,
 				B259E9851F66712F007D8461 /* ProductModel.m */,
+				124F506F1F68FABD004D00CE /* ProductCollectionViewController.h */,
+				124F50701F68FABD004D00CE /* ProductCollectionViewController.m */,
+				124F50721F68FAE5004D00CE /* ProductCollectionViewCell.h */,
+				124F50731F68FAE5004D00CE /* ProductCollectionViewCell.m */,
+				124F50761F690C9B004D00CE /* ProductManager.h */,
+				124F50771F690CDE004D00CE /* ProductManager.m */,
 			);
 			name = Product;
 			sourceTree = "<group>";
@@ -135,6 +180,24 @@
 				B259E9891F67BC99007D8461 /* Constants.h */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		B259E9A01F691216007D8461 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				B259E9A91F691C4F007D8461 /* CheckoutViewController.h */,
+				B259E9AA1F691C4F007D8461 /* CheckoutViewController.m */,
+				B259E9B11F692CDA007D8461 /* CheckoutTableViewCell.h */,
+				B259E9B21F692CDA007D8461 /* CheckoutTableViewCell.m */,
+				B259E9B31F692CDA007D8461 /* CheckoutTableViewCell.xib */,
+				B259E9A41F69196F007D8461 /* CheckoutItemTableViewCell.h */,
+				B259E9A51F69196F007D8461 /* CheckoutItemTableViewCell.m */,
+				B259E9A61F69196F007D8461 /* CheckoutItemTableViewCell.xib */,
+				B259E9B61F6A61C7007D8461 /* CheckoutBottonView.h */,
+				B259E9B71F6A61C7007D8461 /* CheckoutBottonView.m */,
+				B259E9B91F6A61DA007D8461 /* CheckoutBottonView.xib */,
+			);
+			name = Checkout;
 			sourceTree = "<group>";
 		};
 		B9A443D9A2EED14514AA6B04 /* Pods */ = {
@@ -194,8 +257,12 @@
 				E55423F11F6A1F100035204E /* Profile */,
 				E52E872E1F6A185800D2FA7A /* Appdelegate */,
 				E59C31C41F66305700B33593 /* Landing */,
+				124F507D1F6B6F37004D00CE /* Navigation */,
+				E59C31AD1F661FE800B33593 /* AppDelegate.h */,
+				E59C31AE1F661FE800B33593 /* AppDelegate.m */,
 				B259E96E1F6629B4007D8461 /* API */,
 				B259E96F1F6629BD007D8461 /* Comment */,
+				B259E9A01F691216007D8461 /* Checkout */,
 				B259E9841F667118007D8461 /* Product */,
 				E5F2050C1F692F030010421E /* Facebook */,
 				B259E9881F67BC69007D8461 /* Constants */,
@@ -299,9 +366,12 @@
 				E55423FB1F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib in Resources */,
 				E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */,
 				B259E99B1F67DBF3007D8461 /* CommentTableViewCell.xib in Resources */,
+				B259E9A81F69196F007D8461 /* CheckoutItemTableViewCell.xib in Resources */,
 				E59C31C61F6655CD00B33593 /* Landing.storyboard in Resources */,
 				E55423F61F6A1F7A0035204E /* ProfileInformationTableViewCell.xib in Resources */,
 				E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */,
+				B259E9BA1F6A61DA007D8461 /* CheckoutBottonView.xib in Resources */,
+				B259E9B51F692CDA007D8461 /* CheckoutTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,16 +432,24 @@
 			files = (
 				E55423FE1F6A53C80035204E /* ProfileTableViewController.m in Sources */,
 				B259E98D1F67C531007D8461 /* SeperatorTableViewCell.m in Sources */,
+				124F50781F690CDE004D00CE /* ProductManager.m in Sources */,
+				124F50801F6B6F54004D00CE /* GradientNavigationViewController.m in Sources */,
 				B259E99A1F67DBF3007D8461 /* CommentTableViewCell.m in Sources */,
+				B259E9AB1F691C4F007D8461 /* CheckoutViewController.m in Sources */,
+				124F50711F68FABD004D00CE /* ProductCollectionViewController.m in Sources */,
 				B259E9951F67CA4F007D8461 /* ProductInformationTableViewCell.m in Sources */,
 				B259E9711F6629F6007D8461 /* ProductCommentViewController.m in Sources */,
 				B259E99E1F67E382007D8461 /* CommentManager.m in Sources */,
+				B259E9B81F6A61C7007D8461 /* CheckoutBottonView.m in Sources */,
+				B259E9B41F692CDA007D8461 /* CheckoutTableViewCell.m in Sources */,
 				B259E9831F666AD4007D8461 /* CommentModel.m in Sources */,
 				E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */,
+				B259E9A71F69196F007D8461 /* CheckoutItemTableViewCell.m in Sources */,
 				E59C31C31F66304D00B33593 /* LandingViewController.m in Sources */,
 				E59C31AC1F661FE800B33593 /* main.m in Sources */,
 				E55423F51F6A1F7A0035204E /* ProfileInformationTableViewCell.m in Sources */,
 				E55423FA1F6A30460035204E /* ProfileSegmentedControlTableViewCell.m in Sources */,
+				124F50741F68FAE5004D00CE /* ProductCollectionViewCell.m in Sources */,
 				B259E9861F66712F007D8461 /* ProductModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

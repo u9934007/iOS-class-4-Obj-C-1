@@ -17,4 +17,5 @@
 #define COMMENT_TABLEVIEW_CELL   @"CommentTableViewCell"
 #define PROFILE_INFORMATION_TABLEVIEW_CELL   @"ProfileInformationTableViewCell"
 #define PROFILE_SEGMENTEDCONTROL_TABLEVIEW_CELL   @"ProfileSegmentedControlTableViewCell"
-
+#define CHECKOUTITEM_TABLEVIEW_CELL   @"CheckoutItemTableViewCell"
+#define CHECKOUT_TABLEVIEW_CELL   @"CheckoutTableViewCell"

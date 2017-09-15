@@ -30,7 +30,7 @@
     return instance;
 }
     
--(void)getCommentsForProductID:(NSString *)productID withCompletionHandler:(void (^__nonnull)(NSMutableArray<CommentModel *> * __nullable commentArray, NSError * __nullable error)) completionHandler  {
+-(void) getCommentsForProductID:(NSString *)productID withCompletionHandler:(void (^__nonnull)(NSMutableArray<CommentModel *> * __nullable commentArray, NSError * __nullable error)) completionHandler {
     
     //userDefaultToken要從userDefault抓
     NSString *userDefaultToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiI1OTUyMWI2MWU2Y2I2MDE5ZjhjYjYwMTkiLCJleHAiOjE1MzY3NDgzMzcuMDM1LCJpYXQiOjE1MDUyMTIzMzcuMDM1OTYsImlzcyI6IjU5MjUxY2IxNDdkNTNiMDg1Y2EwNzY1NCIsInR5cGUiOiJhcHAiLCJ2ZXJzaW9uIjoiMS4wIn0.sgvobcV60oqz9J2yOQ-DtB6cnt1-hXVAObNjikJHryU";
@@ -47,7 +47,7 @@
     
     NSLog(@"%@", urlString);
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: urlString ]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: urlString]];
     [request setHTTPMethod:@"GET"];
     [request addValue:[NSString stringWithFormat: @"Bearer %@", userDefaultToken] forHTTPHeaderField: @"Authorization"];
     
@@ -131,8 +131,9 @@
         }
         
         NSString *next = [jsonObject objectForKey:@"next"];
+        
         if (next == nil) {
-
+            
             _lastPage = YES ;
 
         } else {

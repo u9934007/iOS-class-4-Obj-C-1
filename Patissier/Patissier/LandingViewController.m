@@ -8,6 +8,8 @@
 
 
 #import "LandingViewController.h"
+#import "ProductCollectionViewController.h"
+#import "GradientNavigationViewController.h"
 
 @interface LandingViewController ()
 
@@ -155,9 +157,34 @@
                          [[NSUserDefaults standardUserDefaults] setObject:[[[result valueForKeyPath:@"picture"]valueForKeyPath:@"data"] valueForKeyPath:@"url"]forKey:@"picture"];
                          [[NSUserDefaults standardUserDefaults] setObject:[[FBSDKAccessToken currentAccessToken]tokenString] forKey:@"token"];
                          
-                         ProductCommentViewController *productCommentViewController = [[ProductCommentViewController alloc] init];
+                         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
                          
-                         [self presentViewController:productCommentViewController animated:true completion:nil];
+                         layout.itemSize = CGSizeMake(154, 160);
+                         
+                         layout.minimumLineSpacing = 22;
+                         
+                         layout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20);
+                         
+                         
+                         ProductCollectionViewController *productCollectionViewController = [[ProductCollectionViewController alloc]initWithCollectionViewLayout:layout];
+                         
+                         GradientNavigationViewController *storeNavigationController = [[GradientNavigationViewController alloc]initWithRootViewController:productCollectionViewController];
+                         
+                         UIViewController *profileViewController = [[UIViewController alloc]init ];
+                         
+                         GradientNavigationViewController *profileNavigationController = [[GradientNavigationViewController alloc]initWithRootViewController:profileViewController];
+                         
+                         UITabBarController *tabBarController = [[UITabBarController alloc]init];
+                         
+                         [storeNavigationController.tabBarItem initWithTitle:@"Store" image:[UIImage imageNamed:@"icon-store"] tag:0];
+                         [profileNavigationController.tabBarItem initWithTitle:@"Profile" image:[UIImage imageNamed:@"icon-profile"] tag:1];
+                         
+                         
+                         
+                         NSArray *tabBarControllers = [[NSArray alloc]initWithObjects:storeNavigationController, profileNavigationController, nil];
+                         
+                         [tabBarController setViewControllers:tabBarControllers ];
+                        [self presentViewController:tabBarController animated:true completion:nil];
 
                      } else {
 
