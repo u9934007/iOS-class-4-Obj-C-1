@@ -11,6 +11,7 @@
 #import "LandingViewController.h"
 #import "ProfileTableViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
