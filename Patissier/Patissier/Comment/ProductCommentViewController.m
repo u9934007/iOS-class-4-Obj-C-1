@@ -54,8 +54,11 @@ typedef enum{
      
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBarController.tabBar.hidden = true;
+    //self.tabBarController.tabBar.hidden = true;
     // TempInformation
+    
+    
+    
     
     
     [self setDefaultProperty];

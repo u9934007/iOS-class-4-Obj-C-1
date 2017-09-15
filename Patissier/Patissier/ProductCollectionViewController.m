@@ -46,7 +46,7 @@ static NSString * const reuseIdentifier = @"cell";
     
     
     [super viewDidLoad];
-    self.collectionView.backgroundColor = [UIColor redColor];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     self.productImageArray = [[NSMutableArray alloc]init];
     self.productImageDictionary = [[NSMutableDictionary alloc]init];
     
