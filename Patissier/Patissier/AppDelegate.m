@@ -17,22 +17,45 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ProductModel *product = [[ProductModel alloc] initWithTitle:@"巧克力杯子蛋糕" iD:@"5947974173a7f08ded3e8269" price: 120];
-    
-    ProductCommentViewController *vc = [[ProductCommentViewController alloc] initWithProduct: product];
-    self.window.rootViewController = vc;
 
-//    LandingViewController *landingViewController = [[UIStoryboard storyboardWithName: @"Landing" bundle:nil] instantiateViewControllerWithIdentifier: @"LandingViewController"];
-//
-//    self.window.rootViewController = landingViewController;
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
+        
+        ProductModel *product = [[ProductModel alloc] initWithTitle:@"巧克力杯子蛋糕" iD:@"5947974173a7f08ded3e8269" price: 120];
+        
+        ProductCommentViewController *vc = [[ProductCommentViewController alloc] initWithProduct: product];
+
+        self.window.rootViewController = vc;
+        
+    } else {
+    
+        LandingViewController *landingViewController = [[UIStoryboard storyboardWithName: @"Landing" bundle:nil] instantiateViewControllerWithIdentifier: @"LandingViewController"];
+        
+        self.window.rootViewController = landingViewController;
+        
+    }
 
     [self.window makeKeyAndVisible];
-
+    
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                    ];
+    // Add any custom logic here.
+    return handled;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -53,6 +76,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 

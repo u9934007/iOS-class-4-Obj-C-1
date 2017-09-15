@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductModel.h"
 
 @interface CheckoutViewController : UIViewController
+
+@property ProductModel* product;
+
+- (id)initWithProduct: (ProductModel*)product;
 
 @end

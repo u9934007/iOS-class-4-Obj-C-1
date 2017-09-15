@@ -6,11 +6,15 @@
 //  Copyright © 2017年 Brady Huang. All rights reserved.
 //
 
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "LandingViewController.h"
 
 @interface LandingViewController ()
 
 @property CAGradientLayer *backgroundGradientLayer;
+
+- (void) errorHandler:(void (^)(NSError* error))callbackBlock;
 
 @end
 
@@ -55,8 +59,6 @@
     _backgroundGradientLayer = [CAGradientLayer layer];
     
     CAGradientLayer *layer = _backgroundGradientLayer;
-    
-//    CAGradientLayer *layer = [CAGradientLayer layer];
     
     layer.frame = self.view.bounds;
     
@@ -116,6 +118,80 @@
     
     button.layer.shadowRadius = 10.0;
     
+}
+
+
+- (IBAction)signInWithFacebook:(id)sender {
+    
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+
+    loginManager.loginBehavior = FBSDKLoginBehaviorBrowser;
+    
+    [loginManager logInWithReadPermissions:@[@"public_profile",@"email"] fromViewController: self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        
+        if (error)
+        {
+            NSLog(@"Process error");
+
+            [self facebookLoginFailed:YES];
+
+        } else if (result.isCancelled) {
+
+            [self facebookLoginFailed:NO];
+            
+        } else {
+            
+            if ([FBSDKAccessToken currentAccessToken]) {
+                
+                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, email, name, picture.type(large), link"}]
+                 
+                 startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                     
+                     if (!error) {
+                         
+                         NSLog(@"fetched user:%@", result);
+                         
+                         [[NSUserDefaults standardUserDefaults] setObject:[result valueForKeyPath:@"name"] forKey:@"name"];
+                         
+                         [[NSUserDefaults standardUserDefaults] setObject:[result valueForKeyPath:@"email"] forKey:@"email"];
+                         
+                         [[NSUserDefaults standardUserDefaults] setObject:[[[result valueForKeyPath:@"picture"]valueForKeyPath:@"data"] valueForKeyPath:@"url"]forKey:@"picture"];
+                         [[NSUserDefaults standardUserDefaults] setObject:[[FBSDKAccessToken currentAccessToken]tokenString] forKey:@"token"];
+                         
+                         ProductCommentViewController *productCommentViewController = [[ProductCommentViewController alloc] init];
+                         
+                         [self presentViewController:productCommentViewController animated:true completion:nil];
+
+                     } else {
+
+                         [self facebookLoginFailed:YES];
+
+                         NSLog(@"%@",error);
+                     }
+
+                 }];
+            }
+            
+        }
+        
+    }];
+    
+}
+
+- (void)facebookLoginFailed:(BOOL)isFBResponce{
+    if(isFBResponce){
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Attention", nil) message:NSLocalizedString(@"request_error", nil) preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alert animated:alert completion:nil];
+        
+    } else{
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Attention", nil) message:NSLocalizedString(@"loginfb_cancelled", nil) preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alert animated:alert completion:nil];
+        
+    }
 }
 
 
