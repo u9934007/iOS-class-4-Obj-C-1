@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ProductModel.h"
+#import "GradientNavigationViewController.h"
 
 @interface AppDelegate ()
 
@@ -57,11 +58,11 @@
         
         ProductCollectionViewController *productCollectionViewController = [[ProductCollectionViewController alloc]initWithCollectionViewLayout:layout];
         
-        UINavigationController *storeNavigationController = [[UINavigationController alloc]initWithRootViewController:productCollectionViewController];
+        GradientNavigationViewController *storeNavigationController = [[GradientNavigationViewController alloc]initWithRootViewController:productCollectionViewController];
         
         UIViewController *profileViewController = [[UIViewController alloc]init ];
         
-        UINavigationController *profileNavigationController = [[UINavigationController alloc]initWithRootViewController:profileViewController];
+        GradientNavigationViewController *profileNavigationController = [[GradientNavigationViewController alloc]initWithRootViewController:profileViewController];
         
         UITabBarController *tabBarController = [[UITabBarController alloc]init];
         
