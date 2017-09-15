@@ -10,4 +10,16 @@
 
 @interface ProfileSegmentedControlTableViewCell : UITableViewCell
 
+typedef NS_ENUM(NSInteger, Segment){
+    
+    left,
+    
+    right
+    
+};
+
+@property (weak, nonatomic) IBOutlet UIButton *leftButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+
 @end

@@ -29,10 +29,6 @@ typedef NS_ENUM(NSInteger, Component){
 
 @implementation ProfileTableTableViewController
 
-
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -63,18 +59,17 @@ typedef NS_ENUM(NSInteger, Component){
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    NSInteger num = enumCount;
+    NSInteger count = enumCount;
     
-    
-    
-    return enumCount;
+    return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     switch (_component) {
             
-        case information: segmentedControl:
+        case information:
+        case segmentedControl:
             
             return 1;
             
@@ -88,7 +83,7 @@ typedef NS_ENUM(NSInteger, Component){
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 44;
+    return 44.0;
     
 }
 
@@ -97,6 +92,8 @@ typedef NS_ENUM(NSInteger, Component){
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: PROFILE_SEGMENTEDCONTROL_TABLEVIEW_CELL forIndexPath:indexPath];
     
     UITableViewCell *test = [[UITableViewCell alloc] init];
+    
+    test.backgroundColor = [UIColor redColor];
     
     return test;
 }

@@ -46,6 +46,10 @@
                     <constraint firstAttribute="trailing" secondItem="4Tb-PE-N7S" secondAttribute="trailing" constant="10" id="z5Q-4D-MbY"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="leftButton" destination="ROV-EH-0Xj" id="H4Q-jy-HYS"/>
+                <outlet property="rightButton" destination="cVN-3n-fLk" id="i44-DD-EzF"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
