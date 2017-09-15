@@ -27,7 +27,7 @@
         
         ProductModel *product = [[ProductModel alloc] initWithTitle:@"巧克力杯子蛋糕" iD:@"5947974173a7f08ded3e8269" price: 120];
         
-        ProfileTableTableViewController *productCommentViewController = [[ProfileTableTableViewController alloc] init];
+        ProfileTableViewController *productCommentViewController = [[ProfileTableViewController alloc] init];
 
         self.window.rootViewController = productCommentViewController;
         

@@ -22,7 +22,7 @@
 		E55423F61F6A1F7A0035204E /* ProfileInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55423F41F6A1F7A0035204E /* ProfileInformationTableViewCell.xib */; };
 		E55423FA1F6A30460035204E /* ProfileSegmentedControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E55423F81F6A30460035204E /* ProfileSegmentedControlTableViewCell.m */; };
 		E55423FB1F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55423F91F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib */; };
-		E55423FE1F6A53C80035204E /* ProfileTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55423FD1F6A53C80035204E /* ProfileTableTableViewController.m */; };
+		E55423FE1F6A53C80035204E /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55423FD1F6A53C80035204E /* ProfileTableViewController.m */; };
 		E59C31AC1F661FE800B33593 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AB1F661FE800B33593 /* main.m */; };
 		E59C31AF1F661FE800B33593 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C31AE1F661FE800B33593 /* AppDelegate.m */; };
 		E59C31B71F661FE800B33593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59C31B61F661FE800B33593 /* Assets.xcassets */; };
@@ -58,8 +58,8 @@
 		E55423F71F6A30460035204E /* ProfileSegmentedControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileSegmentedControlTableViewCell.h; sourceTree = "<group>"; };
 		E55423F81F6A30460035204E /* ProfileSegmentedControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileSegmentedControlTableViewCell.m; sourceTree = "<group>"; };
 		E55423F91F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileSegmentedControlTableViewCell.xib; sourceTree = "<group>"; };
-		E55423FC1F6A53C80035204E /* ProfileTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableTableViewController.h; sourceTree = "<group>"; };
-		E55423FD1F6A53C80035204E /* ProfileTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableTableViewController.m; sourceTree = "<group>"; };
+		E55423FC1F6A53C80035204E /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		E55423FD1F6A53C80035204E /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
 		E59C31A71F661FE800B33593 /* Patissier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patissier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59C31AB1F661FE800B33593 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E59C31AD1F661FE800B33593 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 				E55423F71F6A30460035204E /* ProfileSegmentedControlTableViewCell.h */,
 				E55423F81F6A30460035204E /* ProfileSegmentedControlTableViewCell.m */,
 				E55423F91F6A30460035204E /* ProfileSegmentedControlTableViewCell.xib */,
-				E55423FC1F6A53C80035204E /* ProfileTableTableViewController.h */,
-				E55423FD1F6A53C80035204E /* ProfileTableTableViewController.m */,
+				E55423FC1F6A53C80035204E /* ProfileTableViewController.h */,
+				E55423FD1F6A53C80035204E /* ProfileTableViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55423FE1F6A53C80035204E /* ProfileTableTableViewController.m in Sources */,
+				E55423FE1F6A53C80035204E /* ProfileTableViewController.m in Sources */,
 				B259E98D1F67C531007D8461 /* SeperatorTableViewCell.m in Sources */,
 				B259E99A1F67DBF3007D8461 /* CommentTableViewCell.m in Sources */,
 				B259E9951F67CA4F007D8461 /* ProductInformationTableViewCell.m in Sources */,

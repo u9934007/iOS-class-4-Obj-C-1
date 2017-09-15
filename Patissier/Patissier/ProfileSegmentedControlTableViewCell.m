@@ -18,12 +18,6 @@
 
 @interface ProfileSegmentedControlTableViewCell ()
 
-@property (nonatomic) Segment selectedSegment;
-
-@property (nonatomic) NSString *leftTitle;
-
-@property (nonatomic) NSString *rightTitle;
-
 @end
 
 @implementation ProfileSegmentedControlTableViewCell
@@ -94,16 +88,19 @@
     view.backgroundColor = [UIColor colorWithRed: 255.0 / 255.0
                                            green: 94.0  / 255.0
                                             blue: 89.0 / 255.0
-                                           alpha:1.0];
+                                           alpha: 1.0];
 }
 
 - (void)setUpLeftButton {
     
     UIButton *button = _leftButton;
     
-    [button addTarget:self action: @selector(leftDidSelect:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self
+               action:@selector(leftDidSelect:)
+     forControlEvents:UIControlEventTouchUpInside];
     
-    [button setTitle:_leftTitle forState:UIControlStateNormal];
+    [button setTitle:self.leftTitle
+            forState:UIControlStateNormal];
     
     button.backgroundColor = [UIColor blackColor];
     
@@ -119,9 +116,12 @@
     
     UIButton *button = _rightButton;
     
-    [button addTarget:self action: @selector(rightDidSelect:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self
+               action:@selector(rightDidSelect:)
+     forControlEvents:UIControlEventTouchUpInside];
     
-    [button setTitle:_leftTitle forState:UIControlStateNormal];
+    [button setTitle:self.rightTitle
+            forState:UIControlStateNormal];
     
     button.backgroundColor = [UIColor blackColor];
     
@@ -137,15 +137,11 @@
     
     self.selectedSegment = left;
     
-//    _selectedSegment = left;
-    
 }
 
 - (void)rightDidSelect:(id) sender {
     
     self.selectedSegment = right;
-    
-//    _selectedSegment = right;
     
 }
 

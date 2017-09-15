@@ -18,6 +18,12 @@ typedef NS_ENUM(NSInteger, Segment){
     
 };
 
+@property (nonatomic) Segment selectedSegment;
+
+@property (nonatomic) NSString *leftTitle;
+
+@property (nonatomic) NSString *rightTitle;
+
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;

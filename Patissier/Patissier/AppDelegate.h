@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProductCommentViewController.h"
 #import "LandingViewController.h"
-#import "ProfileTableTableViewController.h"
+#import "ProfileTableViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

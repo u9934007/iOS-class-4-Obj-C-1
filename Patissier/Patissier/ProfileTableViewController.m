@@ -6,28 +6,16 @@
 //  Copyright © 2017年 Brady Huang. All rights reserved.
 //
 
-#import "ProfileTableTableViewController.h"
+#import "ProfileTableViewController.h"
 #import "Constants.h"
 
-@interface ProfileTableTableViewController ()
+@interface ProfileTableViewController ()
 
-typedef NS_ENUM(NSInteger, Component){
-    
-    information,
-    
-    segmentedControl,
-    
-    content,
-    
-    enumCount
-    
-};
-
-@ property Component component;
+@property ProfileComponent component;
 
 @end
 
-@implementation ProfileTableTableViewController
+@implementation ProfileTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,13 +48,15 @@ typedef NS_ENUM(NSInteger, Component){
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     NSInteger count = enumCount;
-    
+
     return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    NSLog(@"%ld", (long)section);
     
-    switch (_component) {
+    switch (section) {
             
         case information:
         case segmentedControl:
@@ -74,6 +64,10 @@ typedef NS_ENUM(NSInteger, Component){
             return 1;
             
         case content:
+            
+            return 1;
+        
+        default:
             
             return 0;
     }
@@ -87,15 +81,80 @@ typedef NS_ENUM(NSInteger, Component){
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    CGFloat aspectRatio;
+    
+    CGFloat width;
+    
+    CGFloat height;
+
+    switch (indexPath.section) {
+
+        case information:
+            
+            aspectRatio = 375.0 / 200.0;
+            
+            width = self.tableView.bounds.size.width;
+            
+            height = width / aspectRatio;
+            
+            return height;
+            
+        case segmentedControl:
+            
+            return UITableViewAutomaticDimension;
+            
+        default:
+            break;
+    }
+    
+    
+    return 50;
+    
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: PROFILE_SEGMENTEDCONTROL_TABLEVIEW_CELL forIndexPath:indexPath];
+
+    ProfileInformationTableViewCell *profileInformationTableViewCell= [[ProfileInformationTableViewCell alloc] init];
     
-    UITableViewCell *test = [[UITableViewCell alloc] init];
+    ProfileSegmentedControlTableViewCell *profileSegmentedControlTableViewCell = [[ProfileSegmentedControlTableViewCell alloc] init];
     
-    test.backgroundColor = [UIColor redColor];
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
     
-    return test;
+    if (indexPath.section == information) {
+        
+        profileInformationTableViewCell.backgroundColor = [UIColor redColor];
+        
+        profileInformationTableViewCell.nameLabel.text = @"test";
+        
+        profileInformationTableViewCell.nameLabel.backgroundColor = [UIColor blackColor];
+        
+        profileInformationTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return profileInformationTableViewCell;
+        
+    }   else if (indexPath.section == segmentedControl) {
+        
+        profileSegmentedControlTableViewCell.backgroundColor = [UIColor blueColor];
+        
+        profileSegmentedControlTableViewCell.leftTitle = NSLocalizedString(@"Favorite", "");
+        
+        profileSegmentedControlTableViewCell.rightTitle = NSLocalizedString(@"Purchased", "");
+        
+        profileSegmentedControlTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return profileSegmentedControlTableViewCell;
+        
+    } else {
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
+        
+    }
+    
 }
 
 /*
