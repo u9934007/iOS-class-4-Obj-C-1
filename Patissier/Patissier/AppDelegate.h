@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProductCommentViewController.h"
 #import "LandingViewController.h"
+#import "ProfileTableViewController.h"
 #import "ProductCollectionViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
