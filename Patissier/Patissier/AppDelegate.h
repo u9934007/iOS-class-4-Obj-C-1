@@ -24,4 +24,3 @@
 @property (strong, nonatomic) UICollectionViewController *test2;
 
 @end
-
