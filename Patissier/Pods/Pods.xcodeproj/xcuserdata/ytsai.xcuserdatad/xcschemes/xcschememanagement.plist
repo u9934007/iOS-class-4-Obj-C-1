@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-Patissier.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,7 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>279AA6726F52A334C45E85774BD21A3D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8409FD80250268A96F640B09FF42D56</key>
 		<dict>
 			<key>primary</key>
 			<true/>

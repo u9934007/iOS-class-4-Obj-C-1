@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ProductModel.h"
+#import "GradientNavigationViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,6 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
-
     
     
     
@@ -30,6 +30,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+<<<<<<< HEAD
     ProductModel *product = [[ProductModel alloc] initWithTitle:@"巧克力杯子蛋糕" iD:@"5947974173a7f08ded3e8269" price: @"120"];
     
     ProductCommentViewController *vc = [[ProductCommentViewController alloc] initWithProduct: product];
@@ -45,7 +46,7 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-
+    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -59,11 +60,11 @@
         
         ProductCollectionViewController *productCollectionViewController = [[ProductCollectionViewController alloc]initWithCollectionViewLayout:layout];
         
-        UINavigationController *storeNavigationController = [[UINavigationController alloc]initWithRootViewController:productCollectionViewController];
+        GradientNavigationViewController *storeNavigationController = [[GradientNavigationViewController alloc]initWithRootViewController:productCollectionViewController];
         
-        UIViewController *profileViewController = [[UIViewController alloc]init ];
+        ProfileTableViewController *profileViewController = [[ProfileTableViewController alloc] init];
         
-        UINavigationController *profileNavigationController = [[UINavigationController alloc]initWithRootViewController:profileViewController];
+        GradientNavigationViewController *profileNavigationController = [[GradientNavigationViewController alloc]initWithRootViewController:profileViewController];
         
         UITabBarController *tabBarController = [[UITabBarController alloc]init];
         
@@ -77,17 +78,14 @@
         [tabBarController setViewControllers:tabBarControllers ];
         self.window.rootViewController = tabBarController;
         
-self.window.rootViewController = tabBarController;
-//        self.window.rootViewController = vc;
-        
     } else {
-    
+        
         LandingViewController *landingViewController = [[UIStoryboard storyboardWithName: @"Landing" bundle:nil] instantiateViewControllerWithIdentifier: @"LandingViewController"];
         
         self.window.rootViewController = landingViewController;
         
     }
-
+    
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ProductCommentViewController.h"
 #import "LandingViewController.h"
+#import "ProfileTableViewController.h"
 #import "ProductCollectionViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -24,4 +26,3 @@
 @property (strong, nonatomic) UICollectionViewController *test2;
 
 @end
-
