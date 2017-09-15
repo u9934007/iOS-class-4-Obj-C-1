@@ -168,7 +168,7 @@ typedef enum{
         
         cell.productTitleLabel.text =  self.product.title;
         
-        cell.productPriceLabel.text = [NSString stringWithFormat: @"$%zd", self.product.price];
+        cell.productPriceLabel.text = [NSString stringWithFormat: @"$%@", self.product.price];
         
         [cell.addToCartButton addTarget:self
                               action:@selector(pressAddToCart)

@@ -12,9 +12,8 @@
     
 @property (strong, nonatomic) NSString* title;
 @property (strong, nonatomic) NSString *iD;
-@property (nonatomic) int *price;
+@property (nonatomic) NSString * price;
 @property (strong, nonatomic) NSString *imageURLString;
-    
-- (instancetype)initWithTitle:(NSString*)title iD:(NSString* )iD price:(int *)price;
+- (instancetype)initWithTitle:(NSString *)title iD:(NSString *)iD price:(NSString * )price;
     
 @end

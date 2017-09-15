@@ -39,6 +39,8 @@
     
     self.automaticallyAdjustsScrollViewInsets = YES;
     
+    self.title = @"Checkout";
+    
     [self setUpDefaultProperty];
     
     [self setUpBottonViewLayout];
@@ -183,7 +185,7 @@
 
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view data source / delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 1;
@@ -229,7 +231,7 @@
         
         cell.productTitleLabel.text =  self.product.title;
         
-        cell.productPriceLabel.text = [NSString stringWithFormat: @"$%zd", self.product.price];
+        cell.productPriceLabel.text = [NSString stringWithFormat: @"$%@", self.product.price];
         
         cell.quantityLabel.text = @"1";
         

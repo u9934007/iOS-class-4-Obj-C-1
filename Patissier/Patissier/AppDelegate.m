@@ -20,16 +20,63 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
+
+    
+    
+    
+    
+    
+    
+    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    ProductModel *product = [[ProductModel alloc] initWithTitle:@"巧克力杯子蛋糕" iD:@"5947974173a7f08ded3e8269" price: 120];
+//    
+//    ProductCommentViewController *vc = [[ProductCommentViewController alloc] initWithProduct: product];
+//    self.window.rootViewController = vc;
+//
+////    LandingViewController *landingViewController = [[UIStoryboard storyboardWithName: @"Landing" bundle:nil] instantiateViewControllerWithIdentifier: @"LandingViewController"];
+////
+////    self.window.rootViewController = landingViewController;
+//
+//    [self.window makeKeyAndVisible];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
 
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
         
-        ProductModel *product = [[ProductModel alloc] initWithTitle:@"巧克力杯子蛋糕" iD:@"5947974173a7f08ded3e8269" price: 120];
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
         
-        ProductCommentViewController *vc = [[ProductCommentViewController alloc] initWithProduct: product];
-
-        self.window.rootViewController = vc;
+        layout.itemSize = CGSizeMake(154, 160);
+        
+        layout.minimumLineSpacing = 22;
+        
+        layout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20);
+        
+        
+        ProductCollectionViewController *productCollectionViewController = [[ProductCollectionViewController alloc]initWithCollectionViewLayout:layout];
+        
+        UINavigationController *storeNavigationController = [[UINavigationController alloc]initWithRootViewController:productCollectionViewController];
+        
+        UIViewController *profileViewController = [[UIViewController alloc]init ];
+        
+        UINavigationController *profileNavigationController = [[UINavigationController alloc]initWithRootViewController:profileViewController];
+        
+        UITabBarController *tabBarController = [[UITabBarController alloc]init];
+        
+        [storeNavigationController.tabBarItem initWithTitle:@"Store" image:[UIImage imageNamed:@"icon-store"] tag:0];
+        [profileNavigationController.tabBarItem initWithTitle:@"Profile" image:[UIImage imageNamed:@"icon-profile"] tag:1];
+        
+        
+        
+        NSArray *tabBarControllers = [[NSArray alloc]initWithObjects:storeNavigationController, profileNavigationController, nil];
+        
+        [tabBarController setViewControllers:tabBarControllers ];
+        self.window.rootViewController = tabBarController;
+        
+self.window.rootViewController = tabBarController;
+//        self.window.rootViewController = vc;
         
     } else {
     
