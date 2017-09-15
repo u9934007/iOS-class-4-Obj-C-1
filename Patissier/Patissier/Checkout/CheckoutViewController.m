@@ -13,11 +13,15 @@
 #import "Constants.h"
 
 
-@interface CheckoutViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface CheckoutViewController () <UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong,nonatomic) UITableView *tableView;
     
 @property (strong,nonatomic) CheckoutBottonView *bottonView;
+
+@property (strong,nonatomic) UIPickerView  *cityPickerView;
+    
+@property (strong, nonatomic) NSArray *cityElements;
 
 @end
 
@@ -54,6 +58,8 @@
 // MARK: SetUp
     
 -(void)setUpDefaultProperty {
+    
+    _cityElements = @[@"Taipei", @"Taichung", @"Tainan", @"Taitung"];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     
@@ -235,6 +241,8 @@
         
         cell.quantityLabel.text = @"1";
         
+        [self setUpCheckoutItemCellWith: cell];
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
         return cell;
@@ -245,6 +253,8 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        [self setUpCheckoutCellWith: cell];
+        
         return cell;
     
     
@@ -252,5 +262,51 @@
     
 }
 
+-(void)setUpCheckoutItemCellWith: (CheckoutItemTableViewCell*) cell {
+    
+    [cell.stepper addTarget: self action: @selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
+    
+}
+
+-(void)valueChanged: (UIStepper*) stepper{
+    
+    CheckoutItemTableViewCell *cell = (CheckoutItemTableViewCell *) stepper.superview.superview;
+    
+    cell.quantityLabel.text =  [NSString stringWithFormat: @"%d", (int)stepper.value];
+ 
+}
+
+-(void)setUpCheckoutCellWith: (CheckoutTableViewCell*) cell {
+    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    self.cityPickerView = [[UIPickerView alloc] init];
+    
+    self.cityPickerView.delegate = self;
+    
+    self.cityPickerView.dataSource = self;
+    
+    cell.cityTextField.inputView = self.cityPickerView;
+    
+    
+}
+    
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+
+}
+    
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return [self.cityElements count];
+
+}
+    
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+   
+    return [self.cityElements objectAtIndex:row];
+
+}
 
 @end

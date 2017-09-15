@@ -8,5 +8,6 @@ target 'Patissier' do
   # Pods for Patissier
   pod 'AFNetworking', '~> 3.0'
   pod 'FBSDKLoginKit', '~> 4.26.0'  
+  pod 'IQKeyboardManagerSwift', '3.3.7'
 
 end
